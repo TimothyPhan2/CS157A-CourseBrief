@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+.btn-hover:hover {
+  
+  filter: drop-shadow(0 0 1em #9acdd0);
+  font-weight: 'bold';
+                  
+}
