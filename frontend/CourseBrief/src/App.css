@@ -40,9 +40,53 @@
 .read-the-docs {
   color: #888;
 }
-.btn-hover:hover {
-  
-  filter: drop-shadow(0 0 1em #9acdd0);
-  font-weight: 'bold';
-                  
+/* SignInSignUpSection.css */
+.section-style {
+  background: #ffffff;
+  color: rgb(255, 255, 255);
+}
+
+.container-style {
+  background: #f6f6f2;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px #9acdd0;
+}
+
+.button-signin {
+  background: #6FB3B8;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 19px;
+  border-bottom-left-radius: 19px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-width: 0;
+  border-style: solid;
+}
+
+.button-signup {
+  background: #A3A3A3;
+  border-top-right-radius: 19px;
+  border-bottom-right-radius: 19px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-width: 0;
+}
+
+.form-container {
+  height: 422px;
+  background: #ffffff;
+  color: var(--bs-secondary);
+  width: 552px;
+  border-width: 5px;
+  border-radius: 23px;
+  box-shadow: 0px 0px 20px 0px #9acdd0;
+}
+
+.button-login {
+  border-radius: 11px;
+  width: 329.3125px;
+  background: #6FB3B8;
 }
