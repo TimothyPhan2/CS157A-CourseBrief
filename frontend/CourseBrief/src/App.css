@@ -47,6 +47,7 @@
 }
 
 .container-style {
+  margin-top: 6vw;
   background: #f6f6f2;
   border-radius: 20px;
   box-shadow: 0px 0px 20px 0px #9acdd0;
@@ -121,3 +122,95 @@
 }
 
 
+
+
+/* General styles for the navigation bar */
+.custom-navbar {
+    background-color: #054444; /* Dark background for the navbar */
+    height: 4vw;
+}
+
+/* Container styles within the navbar */
+.navbar-container {
+    padding: 0 10px; /* Add padding on the sides */
+}
+
+/* Branding specific styles */
+.navbar-brand {
+    font-size: 1.5em; /* Larger font size for the brand name */
+    color: #34a8b0; /* White color text for visibility */
+    font-weight: bold; /* Bold font weight */
+}
+
+/* Toggle button styles */
+.navbar-toggle {
+    border: none; /* Removes border from the toggle button */
+    color: #fff; /* White color for the icon */
+}
+
+/* Collapse section styling */
+.navbar-collapse {
+    justify-content: flex-end; /* Aligns the nav items to the right */
+}
+
+/* General nav item styling */
+.nav-item {
+    color: #bbb; /* Light grey color for nav links */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Specific styles for Home link */
+.nav-home {
+    margin-right: 20px;;
+    font-weight: bold; /* Bold font for Home to make it stand out */
+}
+.nav-login{
+  color: #499fc4; /* White color on hover for Login */
+  font-weight: bold; 
+}
+/* Login link styles */
+.nav-login:hover {
+    color: #16536f;; /* White color on hover for Login */
+}
+
+/* Signup link styles */
+.nav-signup {
+    color: #4CAF50; /* Green color for Signup to make it distinctive */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.nav-signup:hover {
+    color: #367C39; /* Darker green on hover */
+}
+.tag-badge {
+  display: flex;            /* Ensures flexbox layout for internal elements */
+  align-items: center;      /* Centers items vertically */
+  padding: 0.4em 0.8em;     /* Adds padding around the text */
+  margin-right: 8px;        /* Right margin for spacing between tags */
+  margin-bottom: 8px;       /* Bottom margin for wrapping tags */
+  border: none;             /* Removes default border */
+  border-radius: 16px;      /* Rounded corners for a pill-like shape */
+  background-color: #160909; /* Background color of the tag */
+  color: white;             /* Text color */
+  font-size: 0.85rem;       /* Slightly smaller font size */
+  cursor: default;          /* Default cursor on hover */
+  white-space: nowrap;      /* Prevents the text from wrapping */
+}
+
+/* Style for the close icon within the tag */
+.tag-badge .close-icon {
+  font-size: 1.2rem;        /* Larger icon size for better interaction */
+  color: white;             /* Icon color */
+  margin-left: 5px;         /* Space between text and icon */
+  cursor: pointer;          /* Pointer cursor on hover to indicate clickability */
+}
+
+/* Additional hover effect for the close icon */
+.tag-badge .close-icon:hover {
+  color: #ccc;              /* Lightens the icon on hover */
+}
+.searchtitle{
+ 
+ 
+  color: #024343;
+}

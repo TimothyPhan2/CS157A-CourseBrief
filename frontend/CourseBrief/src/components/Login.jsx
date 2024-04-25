@@ -17,7 +17,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
   return (
     <section className="section-style">
-      <Container className="container-style my-5 py-5">
+      <Container className="container-style  py-5">
         <Row className="d-flex justify-content-center">
           <Col className="d-flex flex-column">
             <Col 
@@ -34,21 +34,53 @@ const LoginPage = () => {
             <div className="d-flex justify-content-center align-items-center align-self-center m-5 form-container">
               <Col md={5} xl={6} className="text-center text-md-start">
                 <Form method="post" data-bs-theme="light">
+                  <Row className="mb-4">
+                    <Col xs={12} md={6}>
+                      <Form.Group>
+                        <FormControl
+                          type="text"
+                          name="FirstName"
+                          placeholder="First Name"
+                          className="shadow"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col xs={12} md={6}>
+                      <Form.Group>
+                        <FormControl
+                          type="text"
+                          name="LastName"
+                          placeholder="Last Name"
+                          className="shadow"
+                        />
+                      </Form.Group>
+                    </Col>
+                  </Row>
                   <Form.Group className="mb-4">
-                    <FormControl type="email" name="email" placeholder="Email" className="shadow" />
+                    <FormControl
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="shadow"
+                    />
                   </Form.Group>
                   <Form.Group className="mb-4">
-                    <FormControl type="password" name="password" placeholder="Password" className="shadow" />
+                    <FormControl
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      className="shadow"
+                    />
                   </Form.Group>
                   <div className="d-flex justify-content-center mb-4">
-                    <Button type="submit" className="btn-primary shadow button-login">
-                      Log in
+                    <Button
+                      type="submit"
+                      className="btn-primary shadow button-login"
+                    >
+                      Sign Up
                     </Button>
                   </div>
                 </Form>
-                <p className="text-muted d-flex justify-content-center">
-                  <a href="forgotten-password.html">Forgot your password?</a>
-                </p>
               </Col>
             </div>
           </Col>
