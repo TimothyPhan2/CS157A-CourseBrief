@@ -17,7 +17,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
   return (
     <section className="section-style">
-      <Container className="container-style my-5 py-5">
+      <Container className="container-style  py-5">
         <Row className="d-flex justify-content-center">
           <Col className="d-flex flex-column">
             <Col 

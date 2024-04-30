@@ -5,41 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 /* SignInSignUpSection.css */
 .section-style {
   background: #ffffff;
@@ -47,6 +12,7 @@
 }
 
 .container-style {
+  margin-top: 6vw;
   background: #f6f6f2;
   border-radius: 20px;
   box-shadow: 0px 0px 20px 0px #9acdd0;
@@ -86,20 +52,178 @@
 }
 
 .button-login {
+  border-color: #0f8d96;
   border-radius: 11px;
   width: 329.3125px;
   background: #6FB3B8;
 }
 
-.landing-page {
-  background-image: url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; /* Center the content horizontally */
+.search-btn{
+  border-color: #0f8d96;
+  border-top-right-radius: 11px;
+  border-bottom-right-radius: 11px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100px;
+  background: #6FB3B8;
+  
+}
+.form-css{
+ 
+  border-radius: 11px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 11px;
+  border-bottom-left-radius: 11px;
+  background-color: transparent;
+}
+.underline{
+  
+  border-color: #0f8d96;
+  border-width: 0 0 4px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: transparent;
+  
+}
 
+
+
+
+/* General styles for the navigation bar */
+.custom-navbar {
+    background-color: #054444; /* Dark background for the navbar */
+    height: 4vw;
+}
+
+/* Container styles within the navbar */
+.navbar-container {
+    padding: 0 10px; /* Add padding on the sides */
+}
+
+/* Branding specific styles */
+.navbar-brand {
+    font-size: 1.5em; /* Larger font size for the brand name */
+    color: #34a8b0; /* White color text for visibility */
+    font-weight: bold; /* Bold font weight */
+}
+
+/* Toggle button styles */
+.navbar-toggle {
+    border: none; /* Removes border from the toggle button */
+    color: #fff; /* White color for the icon */
+}
+
+/* Collapse section styling */
+.navbar-collapse {
+    justify-content: flex-end; /* Aligns the nav items to the right */
+}
+
+/* General nav item styling */
+.nav-item {
+    color: #bbb; /* Light grey color for nav links */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Specific styles for Home link */
+.nav-home {
+    margin-right: 20px;;
+    font-weight: bold; /* Bold font for Home to make it stand out */
+}
+.nav-login{
+  color: #499fc4; /* White color on hover for Login */
+  font-weight: bold; 
+}
+/* Login link styles */
+.nav-login:hover {
+    color: #16536f;; /* White color on hover for Login */
+}
+
+/* Signup link styles */
+.nav-signup {
+    color: #4CAF50; /* Green color for Signup to make it distinctive */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.nav-signup:hover {
+    color: #367C39; /* Darker green on hover */
+}
+.tag-badge {
+  display: flex;            /* Ensures flexbox layout for internal elements */
+  align-items: center;      /* Centers items vertically */
+  padding: 0.4em 0.8em;     /* Adds padding around the text */
+  margin-right: 8px;        /* Right margin for spacing between tags */
+  margin-bottom: 8px;       /* Bottom margin for wrapping tags */
+  border: none;             /* Removes default border */
+  border-radius: 16px;      /* Rounded corners for a pill-like shape */
+  background-color: #a86565; /* Background color of the tag */
+  color: rgb(255, 255, 255);             /* Text color */
+  font-size: 0.85rem;       /* Slightly smaller font size */
+  cursor: default;          /* Default cursor on hover */
+  white-space: nowrap;      /* Prevents the text from wrapping */
+}
+
+/* Style for the close icon within the tag */
+.tag-badge .close-icon {
+  font-size: 1.2rem;        /* Larger icon size for better interaction */
+  color: white;             /* Icon color */
+  margin-left: 5px;         /* Space between text and icon */
+  cursor: pointer;          /* Pointer cursor on hover to indicate clickability */
+}
+
+/* Additional hover effect for the close icon */
+.tag-badge .close-icon:hover {
+  color: #ccc;              /* Lightens the icon on hover */
+}
+.searchtitle{
+ 
+ 
+  color: #024343;
+}
+
+/*
+Styles for results and result cards page
+*/
+.resultstitle{
+  color: #024343;
+}
+.card-style {
+  margin-top: 1rem;
+  background: rgb(248, 248, 250);
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px #9acdd0;
+  width: 25rem;
+  height: 15rem;
+}
+
+.prof-title, .course-title, .tags-title{
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.prof-name, .course-name{
+  color: #150a75;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.resultTags {
+  display: flex;            
+  align-items: center;     
+  padding: 0.6em 0.9em;     
+  margin-right: 10px;        
+  margin-bottom: 20px;          
+  background-color: #6FB3B8 !important; 
+  color: rgb(255, 255, 255); 
+  font-size: 1rem;            
+}
+
+.result-card-btn{
+  background: #6FB3B8;
+  border-radius: 10px;
+  width: 90px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border:none;
 }
