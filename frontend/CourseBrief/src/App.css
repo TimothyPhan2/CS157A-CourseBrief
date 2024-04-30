@@ -5,41 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 /* SignInSignUpSection.css */
 .section-style {
   background: #ffffff;
@@ -190,8 +155,8 @@
   margin-bottom: 8px;       /* Bottom margin for wrapping tags */
   border: none;             /* Removes default border */
   border-radius: 16px;      /* Rounded corners for a pill-like shape */
-  background-color: #160909; /* Background color of the tag */
-  color: white;             /* Text color */
+  background-color: #a86565; /* Background color of the tag */
+  color: rgb(255, 255, 255);             /* Text color */
   font-size: 0.85rem;       /* Slightly smaller font size */
   cursor: default;          /* Default cursor on hover */
   white-space: nowrap;      /* Prevents the text from wrapping */
@@ -213,4 +178,51 @@
  
  
   color: #024343;
+}
+
+/*
+Styles for results and result cards page
+*/
+.resultstitle{
+  color: #024343;
+}
+.card-style {
+  margin-top: 1rem;
+  background: rgb(248, 248, 250);
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px #9acdd0;
+  width: 25rem;
+  height: 15rem;
+}
+
+.prof-title, .course-title, .tags-title{
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.prof-name, .course-name{
+  color: #150a75;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.resultTags {
+  display: flex;            
+  align-items: center;     
+  padding: 0.6em 0.9em;     
+  margin-right: 10px;        
+  margin-bottom: 20px;          
+  background-color: #6FB3B8 !important; 
+  color: rgb(255, 255, 255); 
+  font-size: 1rem;            
+}
+
+.result-card-btn{
+  background: #6FB3B8;
+  border-radius: 10px;
+  width: 90px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border:none;
 }
