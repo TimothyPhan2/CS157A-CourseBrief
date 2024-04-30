@@ -8,6 +8,7 @@ import LandingPage from "./components/LandingPage.jsx";
 import SearchPage from "./components/SearchPage.jsx";
 import "./App.css"; 
 import NavBar from "./components/NavBar.jsx";
+import ResultsPage from "./components/ResultsPage.jsx";
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
           
           <Route path="signup" element={<SignUpPage />} />
           <Route path="search" element={<SearchPage />} />
+          <Route path="results" element={<ResultsPage />} />
+
       </Routes>
     </>
 
