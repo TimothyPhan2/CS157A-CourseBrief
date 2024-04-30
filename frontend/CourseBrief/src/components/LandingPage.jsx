@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
     const navigate = useNavigate();
     return (
-        <Container>
+        <Container className="landing-page">
             <Row>
                 <Col>
                     <h1>Welcome to our Landing Page</h1>
