@@ -6,6 +6,7 @@ import "../App.css";
 import landingpageimg from "../img/landingpageimg.jpg";
 import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     // Add logic to handle the search submission, e.g., making an API call
