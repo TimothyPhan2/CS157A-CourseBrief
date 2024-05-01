@@ -1,4 +1,10 @@
 package com.CS157AProject.CourseBrief.repository;
 
-public interface UserRepository {  
-} 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.CS157AProject.CourseBrief.model.User;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, String> {
+
+}
