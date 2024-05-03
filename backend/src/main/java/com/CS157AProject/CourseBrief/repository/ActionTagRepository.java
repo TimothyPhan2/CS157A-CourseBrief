@@ -7,5 +7,7 @@ import com.CS157AProject.CourseBrief.model.ActionTag;
 
 @Repository
 public interface ActionTagRepository extends JpaRepository<ActionTag, String> {
-
+    ActionTag findActionTagsByActionID(String actionID);
+    
+    
 }

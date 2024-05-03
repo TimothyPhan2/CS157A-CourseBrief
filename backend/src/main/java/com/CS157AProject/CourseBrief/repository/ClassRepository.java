@@ -7,4 +7,7 @@ import com.CS157AProject.CourseBrief.model.Class;
 @Repository
 public interface ClassRepository extends JpaRepository<Class, String>{
     
+    Class findClassByClassID(String classID);
+    
+    
 }

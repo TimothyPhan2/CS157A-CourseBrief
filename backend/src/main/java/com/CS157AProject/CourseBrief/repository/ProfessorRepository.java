@@ -7,4 +7,7 @@ import com.CS157AProject.CourseBrief.model.Professor;
 @Repository
 public interface ProfessorRepository extends JpaRepository<Professor, String>{
     
+    Professor findProfessorByProfessorID(String professorID);
+    
+   
 }

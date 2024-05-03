@@ -14,4 +14,10 @@ public class CommentService {
     public Comment saveComment(Comment comment) {
         return commentRepository.save(comment);
     }
+
+    
+    public Comment getCommentByCommentID(String commentID) {
+        return commentRepository.findCommentByCommentID(commentID);
+    }
+
 }

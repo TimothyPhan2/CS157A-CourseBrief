@@ -15,4 +15,8 @@ public class ActionTagService {
         return actionTagRepository.save(actionTag);
     }
 
+    public ActionTag getActionTagById(String actionTagID){
+        return actionTagRepository.findActionTagsByActionID(actionTagID);
+    }
+
 }

@@ -15,4 +15,11 @@ public class TagService {
     public Tag saveTag(Tag tag) {
         return tagRepository.save(tag);
     }
+
+    
+    public Tag getTagByTagID(String tagID) {
+        return tagRepository.findTagByTagID(tagID);
+    }
+
+   
 }

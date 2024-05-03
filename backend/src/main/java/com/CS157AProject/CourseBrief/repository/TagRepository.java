@@ -7,4 +7,7 @@ import com.CS157AProject.CourseBrief.model.Tag;
 @Repository
 public interface TagRepository extends JpaRepository<Tag, String>{
     
+    Tag findTagByTagID(String tagID);
+    
+    
 }

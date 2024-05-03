@@ -14,4 +14,11 @@ public class ClassService {
     public Class saveClass(Class class_name) {
         return classRepository.save(class_name);
     }
+
+   
+    public Class getClassByClassID(String classID){
+        return classRepository.findClassByClassID(classID);
+    }
+
+    
 }

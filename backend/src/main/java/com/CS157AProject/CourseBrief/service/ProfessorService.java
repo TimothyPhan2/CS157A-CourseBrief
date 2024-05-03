@@ -14,4 +14,12 @@ public class ProfessorService {
     public Professor saveProfessor(Professor professor) {
         return professorRepository.save(professor);
     }
+
+
+    public Professor getProfessorByProfessorId(String professorId) {
+        return professorRepository.findProfessorByProfessorID(professorId);
+    }
+    
+
+  
 }

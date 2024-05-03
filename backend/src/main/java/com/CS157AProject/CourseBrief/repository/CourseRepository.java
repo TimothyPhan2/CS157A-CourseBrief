@@ -8,4 +8,8 @@ import com.CS157AProject.CourseBrief.model.Course;
 @Repository
 public interface CourseRepository extends JpaRepository <Course, String> {
 
+    Course findCourseByCourseID(String courseID);
+
+    
+    
 }

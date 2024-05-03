@@ -15,4 +15,11 @@ public class CourseService {
     public Course saveCourse(Course course) {
         return courseRepository.save(course);
     }
+
+   
+    public Course getCourseByCourseId(String courseId) {
+        return courseRepository.findCourseByCourseID(courseId);
+    }
+
+    
 }
