@@ -94,10 +94,7 @@
 }
 .search-btn{
   border-color: #0f8d96;
-  border-top-right-radius: 11px;
-  border-bottom-right-radius: 11px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: 11px;
   width: 100px;
   background: #6FB3B8;
   

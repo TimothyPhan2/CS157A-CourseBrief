@@ -15,6 +15,38 @@ import { useNavigate } from "react-router-dom";
 import "../App.css";
 const SignUpPage = () => {
   const navigate = useNavigate();
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    
+    const email = event.target.email.value
+    const password = event.target.password.value
+    const firstName = event.target.FirstName.value
+    const lastName = event.target.LastName.value
+    if ('' === email) {
+      setEmailError('Please enter your email')
+      return
+    }
+  
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError('Please enter a valid email')
+      return
+    }
+  
+    if ('' === password) {
+      setPasswordError('Please enter a password')
+      return
+    }
+  
+    if (password.length < 7) {
+      setPasswordError('The password must be 8 characters or longer')
+      return
+    }
+    
+    console.log("Form submitted!");
+  };
   return (
     <section className="section-style">
       <Container className="container-style  py-5">
@@ -84,6 +116,7 @@ const SignUpPage = () => {
                     <Button
                       type="submit"
                       className="btn-primary shadow button-login"
+                      onClick={handleSubmit}
                     >
                       Sign Up
                     </Button>

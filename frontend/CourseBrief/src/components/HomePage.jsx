@@ -29,7 +29,7 @@ const SearchPage = () => {
                         <Col
                             className='d-flex flex-fill justify-content-center align-self-center my-5'
                             style={{ height: '12%', width: '60%' }}>
-                            <h1 className='display-4 text-center fw-bold searchtitle'>Search Course</h1>
+                            <h1 className='display-4 text-center fw-bold searchtitle'>Saved Courses</h1>
                         </Col>
                         <div className='d-flex justify-content-center align-items-center align-self-center m-5 form-container'>
                             <Col md={5} xl={6} className='text-center text-md-start'>
