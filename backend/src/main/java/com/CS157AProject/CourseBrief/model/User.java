@@ -71,4 +71,12 @@ public class User {
     public void setDob(Date dob) {
         this.dob = dob;
     }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
 }
