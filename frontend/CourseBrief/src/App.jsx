@@ -9,6 +9,7 @@ import SearchPage from "./components/SearchPage.jsx";
 import Homepage from "./components/HomePage.jsx";
 import "./App.css"; 
 import NavBar from "./components/NavBar.jsx";
+import ResultsPage from "./components/ResultsPage.jsx";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -33,11 +34,8 @@ const App = () => {
           <Route path="login"  element={<LoginPage />} />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="search" element={<SearchPage />} />
-        </>
-      )}
-      
       </Routes>
-    </>
+      </>
 
     );
 };
