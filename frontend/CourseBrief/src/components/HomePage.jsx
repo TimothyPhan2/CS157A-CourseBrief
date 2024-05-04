@@ -8,19 +8,7 @@ import '../App.css';
 const SearchPage = () => {
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();  // Prevent the default form submission
-        const ProfessorName = event.target.ProfessorName.value;
-        const CourseName = event.target.CourseName.value;
-        // Assuming TagInput uses something like `useState` to handle tags and passes them up via props or context
-        // const Tags = event.target.Tags.value; // This might need adjustment based on how TagInput is implemented
-        
-        console.log('Professor:', ProfessorName);
-        console.log('Course:', CourseName);
-        // Assuming you want to do something like navigate or fetch data:
-        // navigate('/some-path');
-    };
-
+    
     return (
         <section className='section-style'>
             <Container className='container-style py-5'>
@@ -33,7 +21,7 @@ const SearchPage = () => {
                         </Col>
                         <div className='d-flex justify-content-center align-items-center align-self-center m-5 form-container'>
                             <Col md={5} xl={6} className='text-center text-md-start'>
-                                <Form method='post' data-bs-theme='light' onSubmit={handleSubmit}>
+                                <Form method='get' data-bs-theme='light' >
                                     <Row className='mb-4'>
                                         <Col xs={12} md={6}>
                                             <Form.Group>
@@ -64,7 +52,7 @@ const SearchPage = () => {
 
                                     <div className='d-flex justify-content-center mb-4'>
                                         <Button type='submit' className='btn-primary shadow button-login'>
-                                            Search
+                                            View All
                                         </Button>
                                     </div>
                                 </Form>

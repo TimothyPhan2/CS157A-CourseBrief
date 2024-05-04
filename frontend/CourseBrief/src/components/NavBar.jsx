@@ -3,6 +3,8 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
 const NavBar = ({ isLoggedIn }) => {
+
+  
   return (
     <Navbar
       bg="dark"
