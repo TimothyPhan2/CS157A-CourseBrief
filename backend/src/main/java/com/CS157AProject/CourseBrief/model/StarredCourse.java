@@ -6,6 +6,8 @@ import com.CS157AProject.CourseBrief.model.EmbeddedIds.StarredCourseID;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "StarredCourse")
 public class StarredCourse {

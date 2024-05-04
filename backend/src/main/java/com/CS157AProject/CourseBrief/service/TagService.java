@@ -31,5 +31,7 @@ public class TagService {
         return tagRepository.findAll();
     }
 
-   
+    public List<Tag> getTagsByLabelContains(String label) {
+        return tagRepository.findTagsByLabelContains(label);
+    }
 }

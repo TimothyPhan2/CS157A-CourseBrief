@@ -8,6 +8,8 @@ import com.CS157AProject.CourseBrief.model.EmbeddedIds.CourseTagID;
 @Setter
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "CourseTag")
 public class CourseTag {
     @EmbeddedId

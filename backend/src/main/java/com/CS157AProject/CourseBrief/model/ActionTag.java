@@ -8,6 +8,8 @@ import lombok.*;
 @Setter
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "ActionTag")
 public class ActionTag {
     @Id

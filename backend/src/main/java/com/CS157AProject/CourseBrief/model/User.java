@@ -4,8 +4,12 @@ package com.CS157AProject.CourseBrief.model;
 import java.util.Date;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "User")
 public class User {
 
@@ -22,9 +26,9 @@ public class User {
     @Column(name = "lastName", nullable = false)
     private String lastName;
 
-    @Column(name = "DOB", nullable = false)
+    /* @Column(name = "DOB", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date dob; 
+    private Date dob;  */
     
     @Column(nullable = false)
     private String password;
@@ -64,13 +68,13 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Date getDob() {
+    /* public Date getDob() {
         return dob;
     }
 
     public void setDob(Date dob) {
         this.dob = dob;
-    }
+    } */
 
     public String getPassword(){
         return password;

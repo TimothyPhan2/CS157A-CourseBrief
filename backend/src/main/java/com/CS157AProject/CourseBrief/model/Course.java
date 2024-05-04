@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 @Setter
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Course")
 public class Course {
     @Id

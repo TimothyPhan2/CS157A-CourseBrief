@@ -8,6 +8,8 @@ import lombok.*;
 @Table(name = "Admin")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Admin {
     
     @Id

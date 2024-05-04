@@ -7,6 +7,8 @@ import lombok.*;
 @Table(name = "Professor")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Professor {
     
     @Id

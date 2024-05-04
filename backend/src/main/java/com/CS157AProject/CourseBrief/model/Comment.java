@@ -8,6 +8,8 @@ import java.util.Date;
 @Setter
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Comment")
 public class Comment {
     @Id
