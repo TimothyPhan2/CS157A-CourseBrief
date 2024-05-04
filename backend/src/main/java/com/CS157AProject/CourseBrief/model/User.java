@@ -16,10 +16,10 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "firstName", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "lastName", nullable = false)
     private String lastName;
 
     @Column(name = "DOB", nullable = false)
@@ -52,16 +52,16 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(String first_name) {
-        this.firstName = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String last_name) {
-        this.lastName = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Date getDob() {
@@ -78,5 +78,9 @@ public class User {
 
     public void setPassword(String password){
         this.password = password;
+    }
+
+    public String getUsername(){
+        return username;
     }
 }

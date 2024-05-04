@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.CS157AProject.CourseBrief.model.User;
 import com.CS157AProject.CourseBrief.repository.UserRepository;
 
+import jakarta.transaction.Transactional;
+
 
 @Service
 public class UserService {
@@ -21,7 +23,17 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
     
+    @Transactional
     public User saveUser(User user){
+        if (userRepository.findUserByUserID(user.getUserID()) != null) {
+            throw new RuntimeException("User already exists");
+        }
+        else if (userRepository.findUserByEmail(user.getEmail()) != null) {
+            throw new RuntimeException("Email already exists");
+        }
+        else if (userRepository.findUserByUsername(user.getUsername()) != null) {
+            throw new RuntimeException("Username already exists");
+        }
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }

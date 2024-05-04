@@ -2,19 +2,21 @@ package com.CS157AProject.CourseBrief.model;
 
 import lombok.*;
 import jakarta.persistence.*;
-import com.CS157AProject.CourseBrief.model.EmbeddedIds.StarredCoursesID;
 
+import com.CS157AProject.CourseBrief.model.EmbeddedIds.CourseTagID;
 @Getter
 @Setter
+@Data
 @Entity
-@Table(name = "StarredCourses")
-public class StarredCourses {
+@Table(name = "CourseTag")
+public class CourseTag {
     @EmbeddedId
-    private StarredCoursesID id;
+    private CourseTagID id;
+    
     @ManyToOne
     @JoinColumn(name = "courseID", insertable = false, updatable = false)
     private Course course;
     @ManyToOne
-    @JoinColumn(name = "userID", insertable = false, updatable = false)
-    private User user;
+    @JoinColumn(name = "tagID", insertable = false, updatable = false)
+    private Tag tag;
 }

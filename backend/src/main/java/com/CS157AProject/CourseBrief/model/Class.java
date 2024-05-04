@@ -14,7 +14,7 @@ public class Class {
     @Column(name = "classID", nullable = false)
     private String classID;
     
-    @Column(name = "class_name", nullable = false, unique = true)
+    @Column(name = "className", nullable = false, unique = true)
     private String className;
 
 }

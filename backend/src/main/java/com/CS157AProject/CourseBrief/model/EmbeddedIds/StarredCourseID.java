@@ -3,14 +3,14 @@ package com.CS157AProject.CourseBrief.model.EmbeddedIds;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class StarredCoursesID implements java.io.Serializable {
+public class StarredCourseID implements java.io.Serializable {
     private String courseID;
     private String userID;
 
-    public StarredCoursesID() {
+    public StarredCourseID() {
     }
 
-    public StarredCoursesID(String courseID, String userID) {
+    public StarredCourseID(String courseID, String userID) {
         this.courseID = courseID;
         this.userID = userID;
     }
@@ -35,8 +35,8 @@ public class StarredCoursesID implements java.io.Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof StarredCoursesID)) return false;
-        StarredCoursesID that = (StarredCoursesID) o;
+        if (!(o instanceof StarredCourseID)) return false;
+        StarredCourseID that = (StarredCourseID) o;
         return getCourseID().equals(that.getCourseID()) && getUserID().equals(that.getUserID());
     }
 

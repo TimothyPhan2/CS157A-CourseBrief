@@ -8,6 +8,8 @@ import com.CS157AProject.CourseBrief.model.Tag;
 public interface TagRepository extends JpaRepository<Tag, String>{
     
     Tag findTagByTagID(String tagID);
+
+    Tag findTagByLabel(String label);
     
     
 }

@@ -3,14 +3,14 @@ package com.CS157AProject.CourseBrief.model.EmbeddedIds;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class CourseTagsID implements java.io.Serializable{
+public class CourseTagID implements java.io.Serializable{
     private String courseID;
     private String tagID;
 
-    public CourseTagsID() {
+    public CourseTagID() {
     }
 
-    public CourseTagsID(String courseID, String tagID) {
+    public CourseTagID(String courseID, String tagID) {
         this.courseID = courseID;
         this.tagID = tagID;
     }
@@ -35,8 +35,8 @@ public class CourseTagsID implements java.io.Serializable{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CourseTagsID)) return false;
-        CourseTagsID that = (CourseTagsID) o;
+        if (!(o instanceof CourseTagID)) return false;
+        CourseTagID that = (CourseTagID) o;
         return getCourseID().equals(that.getCourseID()) && getTagID().equals(that.getTagID());
     }
 

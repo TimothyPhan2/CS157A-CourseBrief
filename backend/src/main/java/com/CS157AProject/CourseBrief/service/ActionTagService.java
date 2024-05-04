@@ -16,7 +16,7 @@ public class ActionTagService {
     }
 
     public ActionTag getActionTagById(String actionTagID){
-        return actionTagRepository.findActionTagsByActionID(actionTagID);
+        return actionTagRepository.findActionTagByActionID(actionTagID);
     }
 
 }

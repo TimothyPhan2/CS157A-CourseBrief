@@ -13,9 +13,9 @@ public class Professor {
     @Column(name = "professorID", nullable = false)
     private String professorID;
 
-    @Column(name = "first_name", nullable = false)
-    private String first_name;
+    @Column(name = "firstName", nullable = false)
+    private String firstName;
 
-    @Column(name = "last_name", nullable = false)
-    private String last_name;
+    @Column(name = "lastName", nullable = false)
+    private String lastName;
 }

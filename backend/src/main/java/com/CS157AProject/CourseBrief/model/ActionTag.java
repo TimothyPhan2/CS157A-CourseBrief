@@ -12,7 +12,7 @@ import lombok.*;
 public class ActionTag {
     @Id
     private String actionID;
-    @Column(name = "action_type")
+    @Column(name = "actionType")
     private String actionType;
     @ManyToOne
     @JoinColumn(name = "tagID")

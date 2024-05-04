@@ -12,7 +12,7 @@ import java.util.Date;
 public class Comment {
     @Id
     private String commentID;
-    @Column(name = "textual_content")
+    @Column(name = "textualContent")
     private String textualContent;
     @Temporal(TemporalType.DATE)
     private Date date;

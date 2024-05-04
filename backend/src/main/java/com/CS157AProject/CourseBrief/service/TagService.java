@@ -1,5 +1,7 @@
 package com.CS157AProject.CourseBrief.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.CS157AProject.CourseBrief.model.Tag;
@@ -19,6 +21,14 @@ public class TagService {
     
     public Tag getTagByTagID(String tagID) {
         return tagRepository.findTagByTagID(tagID);
+    }
+
+    public Tag getTagByLabel(String label) {
+        return tagRepository.findTagByLabel(label);
+    }
+
+    private List<Tag> getAllTags() {
+        return tagRepository.findAll();
     }
 
    
