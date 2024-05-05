@@ -1,6 +1,7 @@
 package com.CS157AProject.CourseBrief.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,5 +26,6 @@ public class UserController {
     @PostMapping("/signup")
     public User signUp(@RequestBody User user) { // When post request is sent to /signup, it will be in the form of a JSON where a 'User' object will be created
         return userService.saveUser(user);
+       
     }
 }
