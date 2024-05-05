@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 public class User {
 
     @Id
-    @Column(name = "userID", nullable = false)
+    @Column(name = "userID", nullable = false, unique = true)
     private String userID;
 
-    @Column(nullable = false, unique = true)
+    @Column(name="email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "firstName", nullable = false)
@@ -30,10 +30,10 @@ public class User {
     @Temporal(TemporalType.DATE)
     private Date dob;  */
     
-    @Column(nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "username" ,nullable = false, unique = true)
     private String username;
 
     public String getUserID() {

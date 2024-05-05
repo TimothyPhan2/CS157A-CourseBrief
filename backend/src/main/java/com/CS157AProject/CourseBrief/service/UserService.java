@@ -23,15 +23,15 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
     
-    @Transactional
+    
     public User saveUser(User user){
         if (userRepository.findUserByUserID(user.getUserID()) != null) {
             throw new RuntimeException("User already exists");
         }
-        else if (userRepository.findUserByEmail(user.getEmail()) != null) {
+        else if (userRepository.findUserByEmail(user.getEmail()).isPresent()) {
             throw new RuntimeException("Email already exists");
         }
-        else if (userRepository.findUserByUsername(user.getUsername()) != null) {
+        else if (userRepository.findUserByUsername(user.getUsername()).isPresent()) {
             throw new RuntimeException("Username already exists");
         }
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));

@@ -18,18 +18,22 @@ const SignUpPage = () => {
   const passwordRef = useRef();
   const firstNameRef = useRef();
   const lastNameRef = useRef();
+  const usernameRef = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     event.stopPropagation();
     
     const user = {
-        firstname: firstNameRef.current.value,
-        lastname: lastNameRef.current.value,
+        firstName: firstNameRef.current.value,
+        lastName: lastNameRef.current.value,
         email: emailRef.current.value,
         password: passwordRef.current.value,
+        username: usernameRef.current.value,
+        userID: "test",
     };
 
+    console.log(user);
     // Using fetch to make a POST request
     fetch('http://localhost:8080/signup', {
         method: 'POST', // Specify the method
@@ -80,7 +84,7 @@ const SignUpPage = () => {
             </Col>
             <div className="d-flex justify-content-center align-items-center align-self-center m-5 form-container">
               <Col md={5} xl={6} className="text-center text-md-start">
-                <Form method="post" onSubmit={handleSubmit} data-bs-theme="light">
+                <Form onSubmit={handleSubmit} data-bs-theme="light">
                   <Row className="mb-4">
                     <Col xs={12} md={6}>
                       <Form.Group>
@@ -105,6 +109,15 @@ const SignUpPage = () => {
                       </Form.Group>
                     </Col>
                   </Row>
+                  <Form.Group className="mb-4">
+                    <FormControl
+                      type="username"
+                      name="username"
+                      placeholder="Username"
+                      ref={usernameRef}
+                      className="shadow"
+                    />
+                  </Form.Group>
                   <Form.Group className="mb-4">
                     <FormControl
                       type="email"
