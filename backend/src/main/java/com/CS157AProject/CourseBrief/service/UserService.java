@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.CS157AProject.CourseBrief.model.User;
 import com.CS157AProject.CourseBrief.repository.UserRepository;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import jakarta.transaction.Transactional;
 
 
@@ -23,15 +23,15 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
     
-    @Transactional
+    
     public User saveUser(User user){
         if (userRepository.findUserByUserID(user.getUserID()) != null) {
             throw new RuntimeException("User already exists");
         }
-        else if (userRepository.findUserByEmail(user.getEmail()) != null) {
+        else if (userRepository.findUserByEmail(user.getEmail()).isPresent()) {
             throw new RuntimeException("Email already exists");
         }
-        else if (userRepository.findUserByUsername(user.getUsername()) != null) {
+        else if (userRepository.findUserByUsername(user.getUsername()).isPresent()) {
             throw new RuntimeException("Username already exists");
         }
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -49,6 +49,18 @@ public class UserService {
     public Optional<User> getUserByUserName(String userName){
         return userRepository.findUserByUsername(userName);
     }
-
-
+    
+    public void deleteUser(String userId){
+        userRepository.deleteById(userId);
+    }
+    
+    public User authenticateUser(String username, String password){
+        User user = userRepository.findUserByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+        if (bCryptPasswordEncoder.matches(password, user.getPassword())) {
+            return user;
+        }
+        else {
+            throw new RuntimeException("Invalid password");
+        }
+    }
 }
