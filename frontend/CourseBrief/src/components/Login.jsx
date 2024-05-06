@@ -1,4 +1,5 @@
-import React, {useRef} from "react";
+import React, {useRef, useState, useContext} from "react";
+import { AuthContext } from "../userAuth/AuthContext";
 import axios1 from "../api/axios";
 import {
   Container,
@@ -12,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 const LoginPage = () => {
-  
+  const { login } = useContext(AuthContext);
   const passwordRef = useRef();
   const usernameRef = useRef();
 
@@ -27,12 +28,12 @@ const LoginPage = () => {
     };
 
     console.log(user);
-    // Using fetch to make a POST request
+    // Using axios to make a POST request
     axios1.post('login', user)
     .then(response => {
         console.log(response.data);
         alert("User logged in successfully");
-        
+        login(response.data); 
         navigate('/homepage');
     })
     .catch(error => {

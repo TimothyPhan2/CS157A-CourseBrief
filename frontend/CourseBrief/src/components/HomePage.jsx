@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
-const SearchPage = () => {
+const HomePage = () => {
     const navigate = useNavigate();
 
     
@@ -65,4 +65,4 @@ const SearchPage = () => {
     );
 };
 
-export default SearchPage;
+export default HomePage;

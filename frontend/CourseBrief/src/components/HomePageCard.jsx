@@ -9,3 +9,4 @@ const HomePageCard = (profName,className, tagList, commentList) => {
 
     
 }
+export default HomePageCard;
