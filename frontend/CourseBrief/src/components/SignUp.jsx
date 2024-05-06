@@ -30,7 +30,6 @@ const SignUpPage = () => {
         email: emailRef.current.value,
         password: passwordRef.current.value,
         username: usernameRef.current.value,
-        userID: "test",
     };
 
     console.log(user);

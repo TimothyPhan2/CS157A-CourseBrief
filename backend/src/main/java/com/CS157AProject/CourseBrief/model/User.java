@@ -3,6 +3,8 @@ package com.CS157AProject.CourseBrief.model;
 //import org.apache.tools.ant.types.resources.comparators.Date;
 import java.util.Date;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -14,6 +16,8 @@ import lombok.NoArgsConstructor;
 public class User {
 
     @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @Column(name = "userID", nullable = false, unique = true)
     private String userID;
 
