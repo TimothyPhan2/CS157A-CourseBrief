@@ -8,13 +8,15 @@ import lombok.*;
 @Table(name = "Class")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Class {
     
     @Id
     @Column(name = "classID", nullable = false)
     private String classID;
     
-    @Column(name = "class_name", nullable = false, unique = true)
+    @Column(name = "className", nullable = false, unique = true)
     private String className;
 
 }

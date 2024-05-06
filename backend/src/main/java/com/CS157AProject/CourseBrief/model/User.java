@@ -4,8 +4,12 @@ package com.CS157AProject.CourseBrief.model;
 import java.util.Date;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "User")
 public class User {
 
@@ -16,15 +20,15 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "firstName", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "lastName", nullable = false)
     private String lastName;
 
-    @Column(name = "DOB", nullable = false)
+    /* @Column(name = "DOB", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date dob; 
+    private Date dob;  */
     
     @Column(nullable = false)
     private String password;
@@ -52,25 +56,25 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(String first_name) {
-        this.firstName = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String last_name) {
-        this.lastName = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Date getDob() {
+    /* public Date getDob() {
         return dob;
     }
 
     public void setDob(Date dob) {
         this.dob = dob;
-    }
+    } */
 
     public String getPassword(){
         return password;
@@ -78,5 +82,9 @@ public class User {
 
     public void setPassword(String password){
         this.password = password;
+    }
+
+    public String getUsername(){
+        return username;
     }
 }
