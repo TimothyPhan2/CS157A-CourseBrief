@@ -19,13 +19,5 @@ public class ProfessorService {
     public Professor getProfessorByProfessorId(String professorId) {
         return professorRepository.findProfessorByProfessorID(professorId);
     }
-    
-    public Professor getProfessorByFirstName(String firstName) {
-        return professorRepository.findProfessorByFirstName(firstName);
-    }
-
-    public Professor getProfessorByLastName(String lastName) {
-        return professorRepository.findProfessorByLastName(lastName);
-    }
   
 }

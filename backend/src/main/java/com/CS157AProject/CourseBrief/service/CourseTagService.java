@@ -1,5 +1,7 @@
 package com.CS157AProject.CourseBrief.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +17,14 @@ public class CourseTagService {
         return courseTagRepository.save(courseTag);
     }
 
-   
+    
     public CourseTag getCourseTagsByCourseTagsID(String courseID, String tagID) {
         return courseTagRepository.findCourseTagByCourseTagID(courseID, tagID);
     }
 
-   
-
+    
+    public void deleteCourseTagsByCourseID(String courseID) {
+        courseTagRepository.deleteCourseTagByCourseID(courseID);
+    }
 
 }

@@ -20,5 +20,9 @@ public class ClassService {
         return classRepository.findClassByClassID(classID);
     }
 
+    public Class getClassByClassName(String className) {
+        return classRepository.findClassByClassName(className);
+    }
+
     
 }

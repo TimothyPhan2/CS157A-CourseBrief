@@ -21,6 +21,10 @@ public class StarredCourseService {
     public StarredCourse getStarredCourseByStarredID(String courseID, String userID) {
         return starredCourseRepository.findStarredCourseByStarredID(courseID, userID);
     }
+
+    public void deleteStarredCoursesByCourseID(String courseID) {
+        starredCourseRepository.deleteStarredCourseByCourseId(courseID);
+    }
  
 
     

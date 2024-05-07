@@ -21,4 +21,11 @@ public class ActionCourseService{
         return actionCourseRepository.findActionCourseByActionID(actionID);
     }
 
+    public String getHighestActionCourseId(){
+        return actionCourseRepository.findHighestActionCourseId();
+    }
+
+    public int getHighestActionCourseId(int startPos){
+        return actionCourseRepository.findHighestActionCourseId(startPos);
+    }
 }

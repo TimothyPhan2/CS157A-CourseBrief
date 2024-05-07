@@ -8,6 +8,8 @@ import com.CS157AProject.CourseBrief.model.Class;
 public interface ClassRepository extends JpaRepository<Class, String>{
     
     Class findClassByClassID(String classID);
+
+    Class findClassByClassName(String className);
     
     
 }

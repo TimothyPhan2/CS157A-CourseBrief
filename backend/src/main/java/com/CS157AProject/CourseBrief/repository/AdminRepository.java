@@ -7,6 +7,8 @@ import com.CS157AProject.CourseBrief.model.Admin;
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, String>{
     Admin findAdminByAdminID(String adminID);
+
+    Admin findAdminByUsername(String username);
     
     
 }

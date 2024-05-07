@@ -22,7 +22,7 @@ public class ActionCourse {
     @ManyToOne
     @JoinColumn(name = "adminID")
     private Admin admin;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "courseID")
     private Course course;
 }
