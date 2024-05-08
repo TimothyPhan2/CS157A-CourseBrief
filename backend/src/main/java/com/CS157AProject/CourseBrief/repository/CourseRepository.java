@@ -11,8 +11,8 @@ import com.CS157AProject.CourseBrief.model.Course;
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, String> {
-
-    Course findCourseByCourseID(String courseID);
+    @Query(value = "SELECT * FROM Course c WHERE c.courseID = :courseID", nativeQuery = true)
+    Course findCourseByCourseID(@Param("courseID") String courseID);
 
     @Query("SELECT c FROM Course c WHERE c.aClass.classID = :classID AND c.professor.professorID = :professorID")
     Course findCourseByClassIDAndProfessorID(@Param("classID") String classID,
