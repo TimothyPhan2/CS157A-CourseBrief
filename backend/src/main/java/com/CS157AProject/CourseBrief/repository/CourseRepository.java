@@ -17,8 +17,8 @@ public interface CourseRepository extends JpaRepository <Course, String> {
 
     boolean existsByCourseID(String courseID); 
 
-    @Query("SELECT MAX(c.courseID) FROM Course c")
-    String findHighestCourseId();
+    /* @Query("SELECT MAX(c.courseID) FROM Course c")
+    String findHighestCourseId(); */
 
     @Query(value = "SELECT MAX(CAST(SUBSTRING(c.courseID, :startPos) AS UNSIGNED)) FROM Course c", nativeQuery = true)
     Integer findHighestCourseId(@Param("startPos") int startPos);

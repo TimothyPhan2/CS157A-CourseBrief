@@ -1,7 +1,6 @@
 package com.CS157AProject.CourseBrief.model;
 
-//import org.apache.tools.ant.types.resources.comparators.Date;
-import java.util.Date;
+
 
 import org.hibernate.annotations.GenericGenerator;
 

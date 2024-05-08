@@ -32,9 +32,9 @@ public class CourseService {
         courseRepository.delete(course);
     }
 
-    public String getHighestCourseId() {
+    /* public String getHighestCourseId() {
         return courseRepository.findHighestCourseId();
-    }
+    } */
 
     public int getHighestCourseId(int startPos) {
         return courseRepository.findHighestCourseId(startPos);

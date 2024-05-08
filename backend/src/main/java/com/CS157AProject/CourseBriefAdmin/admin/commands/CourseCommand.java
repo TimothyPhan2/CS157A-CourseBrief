@@ -7,7 +7,6 @@ import org.springframework.shell.standard.ShellMethod;
 import com.CS157AProject.CourseBrief.model.ActionCourse;
 import com.CS157AProject.CourseBrief.model.Admin;
 import com.CS157AProject.CourseBrief.model.Course;
-import com.CS157AProject.CourseBrief.model.StarredCourse;
 import com.CS157AProject.CourseBrief.service.ActionCourseService;
 import com.CS157AProject.CourseBrief.service.ClassService;
 import com.CS157AProject.CourseBrief.service.CourseService;
@@ -16,9 +15,7 @@ import com.CS157AProject.CourseBrief.service.ProfessorService;
 import com.CS157AProject.CourseBrief.service.StarredCourseService;
 import com.CS157AProject.CourseBriefAdmin.admin.helper.InputReader;
 
-import ch.qos.logback.core.joran.action.Action;
 
-import java.util.Random;
 
 //NOTE: This class is meant to create courses ONLY with EXISTING classes and professors.
 
@@ -61,9 +58,9 @@ public class CourseCommand {
         }
         System.out.println("In order to " + commandType
                 + " a course, you must be logged in as an admin. Please enter your credentials.");
-        // boolean loggedIn = adminSecurity.login();
+
         Admin adminLoggedIn = adminSecurity.adminLogin();
-        // adminSecurity.loggedIn = false;
+    
         if (adminLoggedIn != null) {
             if (commandType.equals("add")) {
                 String classID = inputReader.prompt("Enter the classID of the class");
@@ -71,20 +68,18 @@ public class CourseCommand {
                 Course addedCourse = adminAddCourse(classID, profID);
                 if (addedCourse != null) {
                     adminActionCourse(addedCourse, adminLoggedIn, "add");
+                    return;
                 }
-                return;
-            } else if (commandType.equals("delete")) {
+            }   else if (commandType.equals("delete")) {
                 String classID = inputReader.prompt("Enter the classID of the class");
                 String profID = inputReader.prompt("Enter the professorID of the professor");
                 Course deletedCourse = adminDeleteCourse(classID, profID);
                 if (deletedCourse == null) {
                     adminActionCourse(deletedCourse, adminLoggedIn, "delete");
+                    return;
                 }
-                return;
             }
         }
-        System.out.println("You are not logged in as an admin. Please try again.");
-
     }
 
     public Course adminAddCourse(String classID, String profID) {
@@ -123,6 +118,12 @@ public class CourseCommand {
 
         courseTagService.deleteCourseTagsByCourseID(deletedCourse.getCourseID()); //delete course tags associated with course
         starredCourseService.deleteStarredCoursesByCourseID(deletedCourse.getCourseID()); //delete starred courses associated with course
+        
+        ActionCourse actionCourse = actionCourseService.getActionCourseByCourseID(deletedCourse.getCourseID());
+        if (actionCourse != null) {
+            actionCourse.setCourse(null); //if AC contains the same course, set course to null
+            actionCourseService.saveActionCourse(actionCourse);
+        }
 
         courseService.deleteCourse(courseService.getCourseByClassIDAndProfessorID(classID, profID)); //finally delete course
 

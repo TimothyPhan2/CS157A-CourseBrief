@@ -28,4 +28,8 @@ public class ActionCourseService{
     public int getHighestActionCourseId(int startPos){
         return actionCourseRepository.findHighestActionCourseId(startPos);
     }
+
+    public ActionCourse getActionCourseByCourseID(String courseID){
+        return actionCourseRepository.findActionCourseByCourse_CourseID(courseID);
+    }
 }

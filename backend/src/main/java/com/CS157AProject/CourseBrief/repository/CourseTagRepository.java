@@ -1,7 +1,6 @@
 package com.CS157AProject.CourseBrief.repository;
 
-import java.util.List;
-//import org.hibernate.mapping.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -25,10 +24,10 @@ public interface CourseTagRepository extends JpaRepository<CourseTag, CourseTagI
     @Query("DELETE FROM CourseTag ct WHERE ct.id.courseID = :courseID")
     void deleteCourseTagByCourseID(@Param("courseID") String courseID); 
 
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM CourseTag ct WHERE ct.id.tagID = :tagID")
+    void deleteCourseTagByTagID(@Param("tagID") String tagID);
 
-   /*  @Query("SELECT ct FROM CourseTag ct WHERE ct.courseID = :courseID")
-    List<CourseTag> findCourseTagByCourseID(String courseID); */
-
-    
     
 }

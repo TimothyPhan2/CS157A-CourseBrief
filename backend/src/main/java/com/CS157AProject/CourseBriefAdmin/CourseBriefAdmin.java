@@ -1,12 +1,9 @@
 package com.CS157AProject.CourseBriefAdmin;
 
-import org.hibernate.validator.internal.util.stereotypes.Lazy;
 import org.jline.reader.LineReader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.context.annotation.*;
 import org.springframework.shell.command.annotation.*;
 
 import com.CS157AProject.CourseBriefAdmin.admin.helper.InputReader;
@@ -21,6 +18,7 @@ public class CourseBriefAdmin {
     }
 
     public static void main(String[] args) {
+        System.out.println("Welcome to CourseBrief Admin interface. Please enter a command. Type 'help' for a list of commands.");
         SpringApplication.run(CourseBriefAdmin.class, args);
     }
 

@@ -15,6 +15,6 @@ public class Tag {
     @Column(name = "tagID", nullable = false)
     private String tagID;
 
-    @Column(name= "label", nullable = false)
+    @Column(name= "label", nullable = false, unique = true)
     private String label;
 }

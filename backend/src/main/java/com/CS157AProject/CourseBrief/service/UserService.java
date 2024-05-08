@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import com.CS157AProject.CourseBrief.model.User;
 import com.CS157AProject.CourseBrief.repository.UserRepository;
 
-import jakarta.transaction.Transactional;
-
 
 @Service
 public class UserService {

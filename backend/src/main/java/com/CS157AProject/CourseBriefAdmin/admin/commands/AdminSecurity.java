@@ -41,7 +41,10 @@ public class AdminSecurity {
             if(passwordEncoder.matches(password, adminService.getAdminByUsername(username).getPassword())){
                 admin = adminService.getAdminByUsername(username);
                 loggedIn = true;
+                loggedInAdmin = admin;
             }
+            else{
+                System.out.println("Incorrect username or password.");}
         }
         return admin;
     }

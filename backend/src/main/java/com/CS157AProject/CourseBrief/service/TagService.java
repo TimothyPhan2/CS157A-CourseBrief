@@ -34,4 +34,13 @@ public class TagService {
     public List<Tag> getTagsByLabelContains(String label) {
         return tagRepository.findTagsByLabelContains(label);
     }
+
+    public int getHighestTagId(int startPos) {
+        return tagRepository.findHighestTagId(startPos);
+    }
+
+    public void deleteTag(Tag tag) {
+        tagRepository.delete(tag);
+    }
+
 }
