@@ -20,5 +20,6 @@ public interface ActionTagRepository extends JpaRepository<ActionTag, String> {
 
     @Query("SELECT at FROM ActionTag at WHERE at.tag.tagID = :tagID")
     ActionTag findActionTagByTag_TagID(@Param("tagID")String tagID);
+
 }
     
