@@ -1,5 +1,7 @@
 package com.CS157AProject.CourseBrief.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,9 @@ public class CourseService {
         return courseRepository.findCourseByClassNameAndProfessorName(className, professorFirstName, professorLastName);
     }
 
+    public List<Course> getCourseByCriteria(String className, String profFirstName, String profLastName, List<String> tagLabels) {
+        return courseRepository.findCoursesByCriteria(profFirstName, profLastName, className, tagLabels);
+    }
 
     @Transactional
     public void deleteCourse(Course course) {

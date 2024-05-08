@@ -15,23 +15,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class SearchController {
-    
+
     @Autowired
     private TagService tagService;
-    
+
     @Autowired
     private CourseService courseService;
 
-    @GetMapping("/search/")
+    @GetMapping("/search/tags")
     public List<Tag> searchTags(@RequestParam String label) {
         return tagService.getTagsByLabelContains(label);
     }
 
-    @GetMapping("/search/courses")
-    public Course searchCourses(@RequestParam String profClass, @RequestParam String professorFirstName, @RequestParam String professorLastName) {
-        return courseService.getCourseByClassNameAndProfessorName(profClass, professorFirstName, professorLastName);
+    // @GetMapping("/search/courses")
+    // public Course searchCourses(@RequestParam String profClass, @RequestParam
+    // String professorFirstName, @RequestParam String professorLastName) {
+    // return courseService.getCourseByClassNameAndProfessorName(profClass,
+    // professorFirstName, professorLastName);
+    // }
+
+    @GetMapping("/search")
+    public List<Course> searchCourses(@RequestParam(required = false) String profFirstName,
+            @RequestParam(required = false) String profLastName, @RequestParam(required = false) String className,
+            @RequestParam(required = false) List<String> tagLabel) {
+        System.out.println("profFirstName: " + profFirstName);
+        System.out.println("profLastName: " + profLastName);
+        System.out.println("className: " + className);
+        System.out.println("tagLabel: " + tagLabel);
+        return courseService.getCourseByCriteria(className, profFirstName, profLastName, tagLabel);
     }
-
-
 
 }
