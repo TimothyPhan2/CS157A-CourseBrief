@@ -12,7 +12,7 @@ const LandingPage = () => {
     // Add logic to handle the search submission, e.g., making an API call
     console.log("Form submitted!");
   };
-  const navigate = useNavigate();
+
   return (
     <header className="pt-5">
       <div className="container pt-4 pt-xl-5">
@@ -36,10 +36,9 @@ const LandingPage = () => {
                 
                 <div className="shadow-lg mb-3">
                   <button
-                    className="btn btn-primary btn-lg search-btn "
+                    className="btn btn-primary btn-lg search-btn"
                     type="submit"
-                    style={{ height: "50px", width: "250px" }}
-                    onClick={() => navigate("/login")}
+                    style={{ height: "50px", width: "150px" }}
                   >
                     Get Started
                   </button>
