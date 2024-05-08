@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
@@ -10,33 +10,39 @@ import HomePage from "./components/HomePage.jsx";
 import SettingPage from "./components/SettingPage.jsx";
 import "./App.css"; 
 import NavBar from "./components/NavBar.jsx";
-import { AuthContext, AuthProvider } from "./userAuth/AuthContext";
+import { AuthContext, AuthProvider} from "./userAuth/AuthContext";
 
 const App = () => {
-    const { user } = useContext(AuthContext);
-    
-  return (
-    <AuthProvider>
-      <NavBar />
-      <Routes>
-          {user ? (
-              <>
-                  <Route path="/" element={<LandingPage />} />
-                  <Route path="homepage" element={<SearchPage />} />
-                  <Route path="search" element={<SearchPage />} />
-                  <Route path="setting" element={<SettingPage />} />
-              </>
-          ) : (
-              <>
-                  <Route path="/" element={<LandingPage />} />
-                  <Route path="login" element={<LoginPage />} />
-                  <Route path="signup" element={<SignUpPage />} />
-                  <Route path="search" element={<SearchPage />} />
-              </>
-          )}
-      </Routes>
-    </AuthProvider>
+    return (
+      <AuthProvider>
+        <RoutesComponent />
+      </AuthProvider>
     );
-};
-
-export default App;
+  };
+  
+  const RoutesComponent = () => {
+    const { user } = useContext(AuthContext);
+  
+    return (
+      <>
+        <NavBar />
+        <Routes>
+          {user ? (
+            <>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="homepage" element={<HomePage />} />
+              <Route path="search" element={<SearchPage />} />
+              <Route path="setting" element={<SettingPage />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route path="signup" element={<SignUpPage />} />
+            </>
+          )}
+        </Routes>
+      </>
+    );
+  };
+  export default App;

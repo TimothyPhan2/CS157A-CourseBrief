@@ -1,4 +1,4 @@
-import React, {useRef, useState, useContext} from "react";
+import React, { useRef, useContext } from "react";
 import { AuthContext } from "../userAuth/AuthContext";
 import axios1 from "../api/axios";
 import {
@@ -12,38 +12,40 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+
 const LoginPage = () => {
   const { login } = useContext(AuthContext);
   const passwordRef = useRef();
   const usernameRef = useRef();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    
+
     const user = {
-    
-        password: passwordRef.current.value,
-        username: usernameRef.current.value,
+      password: passwordRef.current.value,
+      username: usernameRef.current.value,
     };
 
     console.log(user);
     // Using axios to make a POST request
     axios1.post('login', user)
-    .then(response => {
+      .then(response => {
         console.log(response.data);
         alert("User logged in successfully");
-        login(response.data); 
-        navigate('/homepage');
-    })
-    .catch(error => {
+        login(response.data); // Call the login function from AuthContext
+        navigate('/homepage'); // Navigate to the homepage
+      })
+      .catch(error => {
         console.error('Error:', error);
-    });
-};
-  const navigate = useNavigate();
+        alert("Login failed. Please check your credentials.");
+      });
+  };
+
   return (
     <section className="section-style">
-      <Container className="container-style  py-5">
+      <Container className="container-style py-5">
         <Row className="d-flex justify-content-center">
           <Col className="d-flex flex-column">
             <Col
@@ -53,7 +55,6 @@ const LoginPage = () => {
               <Button
                 className="btn-primary flex-fill btn-hover button-signin"
                 type="button"
-                
               >
                 Sign In
               </Button>
@@ -61,7 +62,6 @@ const LoginPage = () => {
                 className="btn-primary flex-fill btn-hover button-signup"
                 type="button"
                 onClick={() => navigate("/signup")}
-               
               >
                 Sign Up
               </Button>
@@ -69,10 +69,9 @@ const LoginPage = () => {
             <div className="d-flex justify-content-center align-items-center align-self-center m-5 form-container">
               <Col md={5} xl={6} className="text-center text-md-start">
                 <Form onSubmit={handleSubmit} data-bs-theme="light">
-          
                   <Form.Group className="mb-4">
                     <FormControl
-                      type="username"
+                      type="text"
                       name="username"
                       placeholder="Username"
                       ref={usernameRef}
@@ -93,7 +92,7 @@ const LoginPage = () => {
                       type="submit"
                       className="btn-primary shadow button-login"
                     >
-                      Sign Up
+                      Sign In
                     </Button>
                   </div>
                 </Form>
