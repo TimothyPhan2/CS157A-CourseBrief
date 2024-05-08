@@ -19,4 +19,15 @@ public class ActionTagService {
         return actionTagRepository.findActionTagByActionID(actionTagID);
     }
 
+    public String getHighestActionTagId(){
+        return actionTagRepository.findHighestActionTagId();
+    }
+
+    public int getHighestActionTagId(int startPos){
+        return actionTagRepository.findHighestActionTagId(startPos);
+    }
+
+    public ActionTag getActionTagByTagID(String tagID){
+        return actionTagRepository.findActionTagByTag_TagID(tagID);
+    }
 }

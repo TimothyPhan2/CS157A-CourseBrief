@@ -7,8 +7,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.CS157AProject.CourseBrief.model.User;
 import com.CS157AProject.CourseBrief.repository.UserRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
-import jakarta.transaction.Transactional;
 
 
 @Service

@@ -1,6 +1,7 @@
 package com.CS157AProject.CourseBrief.model;
 
 import lombok.*;
+
 import jakarta.persistence.*;
 
 @Getter
@@ -11,7 +12,9 @@ import jakarta.persistence.*;
 @AllArgsConstructor
 @Table(name = "Course")
 public class Course {
+    
     @Id
+    @Column(name = "courseID", nullable = false)
     private String courseID;
     @ManyToOne
     @JoinColumn(name = "professorID")

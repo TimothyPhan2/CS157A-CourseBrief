@@ -4,7 +4,7 @@ import TagInput from './Tags';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import wefuck from "../api/axios";
+import courseBrief from "../api/axios";
 const SearchPage = () => {
     const [tags, setTags] = useState([]);
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const SearchPage = () => {
     };
 
     useEffect(() => {
-        wefuck.get("/search/tags", {
+        courseBrief.get("/search/tags", {
             params: {
                 label: "Design",
             }

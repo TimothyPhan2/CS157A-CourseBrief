@@ -18,5 +18,6 @@ public interface TagRepository extends JpaRepository<Tag, String>{
     @Query("SELECT t FROM Tag t WHERE t.label LIKE %:label%")
     List<Tag> findTagsByLabelContains(@Param("label") String label);
     
-    
+    @Query(value = "SELECT MAX(CAST(SUBSTRING(t.tagID, :startPos) AS UNSIGNED)) FROM Tag t", nativeQuery = true)
+    int findHighestTagId(@Param("startPos") int startPos);
 }

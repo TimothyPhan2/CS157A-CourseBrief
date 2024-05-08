@@ -21,7 +21,7 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "userID")
     private User user;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "courseID")
     private Course course;
 }

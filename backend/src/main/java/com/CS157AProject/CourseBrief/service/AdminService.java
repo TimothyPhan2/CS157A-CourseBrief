@@ -20,5 +20,9 @@ public class AdminService {
         return adminRepository.findAdminByAdminID(adminID);
     }
 
+    public Admin getAdminByUsername(String username) {
+        return adminRepository.findAdminByUsername(username);
+    }
+
     
 }

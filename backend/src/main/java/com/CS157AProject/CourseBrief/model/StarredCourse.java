@@ -13,7 +13,7 @@ import com.CS157AProject.CourseBrief.model.EmbeddedIds.StarredCourseID;
 public class StarredCourse {
     @EmbeddedId
     private StarredCourseID id;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "courseID", insertable = false, updatable = false)
     private Course course;
     @ManyToOne

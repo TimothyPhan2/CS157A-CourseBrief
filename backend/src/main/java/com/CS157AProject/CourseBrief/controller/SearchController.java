@@ -22,14 +22,16 @@ public class SearchController {
     @Autowired
     private CourseService courseService;
 
-    @GetMapping("/search/tags")
+    @GetMapping("/search/")
     public List<Tag> searchTags(@RequestParam String label) {
         return tagService.getTagsByLabelContains(label);
     }
 
     @GetMapping("/search/courses")
-    public List<Course> searchCourses(@RequestParam String professor, @RequestParam String profClass){
-        return courseService.getCoursesByProfessorAndClass(professor, class);`
+    public Course searchCourses(@RequestParam String profClass, @RequestParam String professorFirstName, @RequestParam String professorLastName) {
+        return courseService.getCourseByClassNameAndProfessorName(profClass, professorFirstName, professorLastName);
     }
+
+
 
 }
