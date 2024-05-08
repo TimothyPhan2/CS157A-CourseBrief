@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Badge } from 'react-bootstrap';
 import { BsXCircleFill } from 'react-icons/bs'; // Using react-icons for a more styled 'X'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
-const TagInput = () => {
+const TagInput = ({onTagsChange}) => {
     const [tags, setTags] = useState([]);
     const [input, setInput] = useState('');
 
+    useEffect(() => {
+        onTagsChange(tags);
+    }, [tags]);
     const handleKeyDown = (event) => {
         if (event.key === 'Enter' && input) {
             event.preventDefault();

@@ -47,9 +47,18 @@ public class UserService {
     public Optional<User> getUserByUserName(String userName){
         return userRepository.findUserByUsername(userName);
     }
-
+    
     public void deleteUser(String userId){
         userRepository.deleteById(userId);
     }
-
+    
+    public User authenticateUser(String username, String password){
+        User user = userRepository.findUserByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
+        if (bCryptPasswordEncoder.matches(password, user.getPassword())) {
+            return user;
+        }
+        else {
+            throw new RuntimeException("Invalid password");
+        }
+    }
 }
