@@ -9,7 +9,6 @@ import com.CS157AProject.CourseBrief.model.ActionCourse;
 
 @Repository
 public interface ActionCourseRepository extends JpaRepository<ActionCourse, String>{
-    @Query("SELECT ac FROM ActionCourse ac WHERE ac.actionID = :actionID")
     ActionCourse findActionCourseByActionID(String actionID);
     
     @Query("SELECT MAX(a.actionID) FROM ActionCourse a")
@@ -18,7 +17,6 @@ public interface ActionCourseRepository extends JpaRepository<ActionCourse, Stri
     @Query(value = "SELECT MAX(CAST(SUBSTRING(a.actionID, :startPos) AS UNSIGNED)) FROM action_course a", nativeQuery = true)
     int findHighestActionCourseId(@Param("startPos") int startPos);
 
-    @Query("SELECT ac FROM ActionCourse ac WHERE ac.course.courseID = :courseID")
-    ActionCourse findActionCourseByCourse_CourseID(@Param("courseID") String courseID);
+    ActionCourse findActionCourseByCourse_CourseID(String courseID);
 
 }
