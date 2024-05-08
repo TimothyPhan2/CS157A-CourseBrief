@@ -1,12 +1,12 @@
-import React, {useContext} from 'react';
+import React, { useEffect, useState} from 'react';
 import { Container, Navbar, Nav, Button, Form, Row, Col, FormControl } from 'react-bootstrap';
 import TagInput from './Tags';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import { AuthContext } from '../userAuth/AuthContext';
+import wefuck from "../api/axios";
 const SearchPage = () => {
-    const { logout } = useContext(AuthContext);
+    const [tags, setTags] = useState([]);
     const navigate = useNavigate();
     const handleLogout = () => {
         logout(); 
@@ -16,15 +16,26 @@ const SearchPage = () => {
         event.preventDefault();  // Prevent the default form submission
         const ProfessorName = event.target.ProfessorName.value;
         const CourseName = event.target.CourseName.value;
+        const Tags = tags;
         // Assuming TagInput uses something like `useState` to handle tags and passes them up via props or context
         // const Tags = event.target.Tags.value; // This might need adjustment based on how TagInput is implemented
-        
         console.log('Professor:', ProfessorName);
         console.log('Course:', CourseName);
-        // Assuming you want to do something like navigate or fetch data:
-        // navigate('/some-path');
+        console.log('Tags:', Tags);
     };
 
+    useEffect(() => {
+        wefuck.get("/search/tags", {
+            params: {
+                label: "Design",
+            }
+        }).then(res => {
+            setTags(res.data);
+            console.log(res.data);
+        }).catch(err => {
+            console.error("you suck at coding")
+        })
+    }, []);
     return (
         <section className='section-style'>
             <Container className='container-style py-5'>
@@ -62,7 +73,7 @@ const SearchPage = () => {
                                     </Row>
                                     <Col>
                                         <Form.Group className='mb-4'>
-                                            <TagInput />
+                                            <TagInput onTagsChange={setTags} />
                                         </Form.Group>
                                     </Col>
 
