@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.CS157AProject.CourseBrief.model.User;
 import com.CS157AProject.CourseBrief.service.UserService;
 
 
 // Testing to see if the user controller works
-
 @RestController
 public class UserController {
     
@@ -30,19 +30,5 @@ public class UserController {
         System.out.println("User Name:" +user.getUsername());
         return userService.saveUser(user);
        
-    }
-    @PostMapping("/login")
-    public User login(@RequestBody User user) {
-
-        User userFromDb = userService.authenticateUser(user.getUsername(), user.getPassword());
-        if (userFromDb != null) {
-            return userFromDb;
-        }
-        else {
-            throw new RuntimeException("User not found");
-        }
-
-
-        
     }
 }

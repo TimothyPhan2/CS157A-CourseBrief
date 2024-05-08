@@ -17,7 +17,6 @@ public interface ActionCourseRepository extends JpaRepository<ActionCourse, Stri
     @Query(value = "SELECT MAX(CAST(SUBSTRING(a.actionID, :startPos) AS UNSIGNED)) FROM action_course a", nativeQuery = true)
     int findHighestActionCourseId(@Param("startPos") int startPos);
 
-    @Query("SELECT ac FROM ActionCourse ac WHERE ac.courseID = :courseID")
-    ActionCourse findActionCourseByCourse_CourseID(@Param("courseID") String courseID);
+    ActionCourse findActionCourseByCourse_CourseID(String courseID);
 
 }

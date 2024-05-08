@@ -17,7 +17,6 @@ public interface ActionTagRepository extends JpaRepository<ActionTag, String> {
     @Query(value = "SELECT MAX(CAST(SUBSTRING(a.actionID, :startPos) AS UNSIGNED)) FROM action_tag a", nativeQuery = true)
     int findHighestActionTagId(@Param("startPos") int startPos);
 
-    @Query("SELECT at FROM ActionTag at WHERE at.tagID = :tagID")
-    ActionTag findActionTagByTag_TagID(@Param("tagID")String tagID);
+    ActionTag findActionTagByTag_TagID(String tagID);
 }
     
