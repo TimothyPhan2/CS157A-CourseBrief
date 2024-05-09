@@ -18,14 +18,14 @@ const ResultCards = ({ prof, course, tags }) => {
         </div>
       </div>
 
-      <div className="d-flex align-items-start mt-3 tags-title">Tags:</div>
+      {/* <div className="d-flex align-items-start mt-3 tags-title">Tags:</div>
       <div className="d-flex flex-wrap">
         {tags.map((tag, index) => (
           <Badge key={index} pill className="resultTags">
             {tag}
           </Badge>
         ))}
-      </div>
+      </div> */}
       <div className="d-flex justify-content-end ">
         <Button className="result-card-btn">Star</Button>
       </div>

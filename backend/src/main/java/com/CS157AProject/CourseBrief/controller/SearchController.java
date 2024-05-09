@@ -37,11 +37,11 @@ public class SearchController {
     @GetMapping("/search")
     public List<Course> searchCourses(@RequestParam(required = false) String profFirstName,
             @RequestParam(required = false) String profLastName, @RequestParam(required = false) String className,
-            @RequestParam(required = false) List<String> tagLabel) {
-        System.out.println("profFirstName: " + profFirstName);
-        System.out.println("profLastName: " + profLastName);
-        System.out.println("className: " + className);
-        System.out.println("tagLabel: " + tagLabel);
+            @RequestParam(required = false) List<String> tagLabel){
+        System.out.println("profFirstName from Search Controller: " + profFirstName);
+        System.out.println("profLastName from Search Controller: " + profLastName);
+        System.out.println("className from Search Controller: " + className);
+        System.out.println("tagLabel from Search Controller: " + tagLabel);
         return courseService.getCourseByCriteria(className, profFirstName, profLastName, tagLabel);
     }
 
