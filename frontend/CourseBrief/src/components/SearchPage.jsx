@@ -14,7 +14,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import courseBrief from "../api/axios";
-import ResultsPage from "./ResultsPage";
 const SearchPage = () => {
   const [tags, setTags] = useState([]);
   const navigate = useNavigate();

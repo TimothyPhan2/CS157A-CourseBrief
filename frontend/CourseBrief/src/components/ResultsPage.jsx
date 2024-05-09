@@ -30,7 +30,7 @@ const ResultsPage = () => {
                   <ResultCards
                     prof={courseData.professor.firstName}
                     course={courseData.aclass.className}
-                    
+                    courseId={courseData.courseID}
                   />
                 </Col>
               ))}

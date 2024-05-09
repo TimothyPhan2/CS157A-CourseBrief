@@ -34,6 +34,8 @@ public class CourseService {
     }
 
     public List<Course> getCourseByCriteria(String className, String profFirstName, String profLastName, List<String> tagLabels) {
+        // List<Course> courses = courseRepository.findCoursesByCriteria(profFirstName, profLastName, className, tagLabels);
+
         System.out.println("profFirstName from Search Service: " + profFirstName);
         System.out.println("profLastName from Search Service: " + profLastName);
         System.out.println("className from Search Service: " + className);

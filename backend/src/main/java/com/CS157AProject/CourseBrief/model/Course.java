@@ -26,6 +26,6 @@ public class Course {
     @JoinColumn(name = "classID")
     private Class aClass;
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<CourseTag> courseTags = new HashSet<>();
 }

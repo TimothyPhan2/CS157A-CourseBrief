@@ -55,7 +55,7 @@ public interface CourseRepository extends JpaRepository<Course, String> {
                         "AND (:lastName IS NULL OR p.lastName = :lastName) " +
                         "AND (:tagLabels IS NULL OR ct.tag.label IN :tagLabels) " +
                         "GROUP BY c.courseID " +
-                        "HAVING COUNT(DISTINCT ct.tag.label) >= SIZE(:tagLabels)")
+                        "HAVING COUNT(DISTINCT ct.tag.label) >= (SELECT COUNT(t) FROM Tag t WHERE t.label IN :tagLabels)")
         List<Course> findCoursesByCriteria(@Param("firstName") String firstName, @Param("lastName") String lastName,
                         @Param("className") String className, @Param("tagLabels") List<String> tagLabels);
 }

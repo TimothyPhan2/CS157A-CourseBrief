@@ -12,6 +12,7 @@ import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import { AuthContext, AuthProvider} from "./userAuth/AuthContext";
 import ResultsPage from "./components/ResultsPage.jsx";
+import CoursePage from "./components/CoursePage.jsx";
 
 const App = () => {
     return (
@@ -35,6 +36,7 @@ const App = () => {
               <Route path="search" element={<SearchPage />} />
               <Route path="setting" element={<SettingPage />} />
               <Route path ="results" element = {<ResultsPage/>} />
+              <Route path = "course/:courseId" element = {<CoursePage/>} />
             </>
           ) : (
             <>
