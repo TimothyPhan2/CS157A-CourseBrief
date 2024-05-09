@@ -1,9 +1,7 @@
 import React, {useRef} from "react";
-
+import axios1 from "../api/axios";
 import {
   Container,
-  Navbar,
-  Nav,
   Button,
   Form,
   Row,
@@ -30,32 +28,21 @@ const SignUpPage = () => {
         email: emailRef.current.value,
         password: passwordRef.current.value,
         username: usernameRef.current.value,
-        userID: "test",
+        
     };
 
     console.log(user);
-    // Using fetch to make a POST request
-    fetch('http://localhost:8080/signup', {
-        method: 'POST', // Specify the method
-        headers: {
-            'Content-Type': 'application/json', // Specify the content type
-        },
-        body: JSON.stringify(user), // Convert the user object to a JSON string
+    
+    axios1.post('signup', user)
+    .then(response => {
+        console.log(response.data);
+        alert("User created successfully");
+        navigate('/login');
     })
-   .then(response => {
-        if (!response.ok) { // Check if the response was successful
-            throw new Error('Network response was not ok');
-        }
-        return response.json(); // Parse the response as JSON
-    })
-   .then(data => {
-        console.log(data); // Log the data
-        // Navigate to another page after successful signup
-        navigate('/search');
-    })
-   .catch(error => {
-        console.error('Error:', error); // Log the error
+    .catch(error => {
+        console.error('Error:', error);
     });
+
 };
   const navigate = useNavigate();
   return (

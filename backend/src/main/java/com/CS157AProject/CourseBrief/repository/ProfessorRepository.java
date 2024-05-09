@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface ProfessorRepository extends JpaRepository<Professor, String>{
     @Query("SELECT a FROM Professor a WHERE a.professorID = :professorID")
-    Professor findProfessorByProfessorID(String professorID);
+    Professor findProfessorByProfessorID(@Param("professorID")String professorID);
 
     
    

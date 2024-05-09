@@ -11,12 +11,12 @@ import org.springframework.data.repository.query.Param;
 public interface UserRepository extends JpaRepository<User, String> {
 
     @Query("SELECT a FROM User a WHERE a.userID = :userID")
-    User findUserByUserID(String userID);
+    User findUserByUserID(@Param("userID")String userID);
 
     @Query("SELECT a FROM User a WHERE a.email = :email")
-    Optional<User> findUserByEmail(String email);
+    Optional<User> findUserByEmail(@Param("email")String email);
 
     @Query("SELECT a FROM User a WHERE a.username = :username")
-    Optional<User> findUserByUsername(String username);
+    Optional<User> findUserByUsername(@Param("username")String username);
 
 }

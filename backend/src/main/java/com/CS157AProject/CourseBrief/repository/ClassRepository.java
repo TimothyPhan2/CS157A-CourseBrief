@@ -9,10 +9,10 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface ClassRepository extends JpaRepository<Class, String>{
     @Query("SELECT a FROM Class a WHERE a.classID = :classID")
-    Class findClassByClassID(String classID);
+    Class findClassByClassID(@Param("classID")String classID);
 
     @Query("SELECT a FROM Class a WHERE a.className = :className")
-    Class findClassByClassName(String className);
+    Class findClassByClassName(@Param("className")String className);
     
     
 }
