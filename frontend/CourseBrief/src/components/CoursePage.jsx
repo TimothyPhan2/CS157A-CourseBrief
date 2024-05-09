@@ -23,7 +23,6 @@ const CoursePage = () => {
     axios1.post(`/comments`, { text: comment })
       .then(response => {
         console.log(response.data);
-        console.log("hello")
         alert("Comment added successfully");
         setComment(''); // Clear the comment input field
         setComments(prevComments => [...prevComments, response.data]); // Add the new comment to the list
