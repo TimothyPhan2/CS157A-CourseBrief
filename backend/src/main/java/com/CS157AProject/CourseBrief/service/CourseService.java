@@ -1,12 +1,14 @@
 package com.CS157AProject.CourseBrief.service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.CS157AProject.CourseBrief.model.Course;
 import com.CS157AProject.CourseBrief.repository.CourseRepository;
+import com.CS157AProject.CourseBrief.repository.CourseTagRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -15,6 +17,9 @@ public class CourseService {
 
     @Autowired
     private CourseRepository courseRepository;
+
+    @Autowired
+    private CourseTagRepository courseTagRepository;
 
     public Course saveCourse(Course course) {
         return courseRepository.save(course);
@@ -34,16 +39,22 @@ public class CourseService {
         return courseRepository.findCourseByClassNameAndProfessorName(className, professorFirstName, professorLastName);
     }
 
-    public List<Course> getCourseByCriteria(String className, String profFirstName, String profLastName, List<String> tagLabels) {
+    public Set<Course> getCourseByCriteria(String className, String profFirstName, String profLastName, List<String> tagLabels) {
         // List<Course> courses = courseRepository.findCoursesByCriteria(profFirstName, profLastName, className, tagLabels);
-
+        Set<Course> courses = courseRepository.findCoursesByCriteria(profFirstName, profLastName, className, tagLabels);
+        setCoursesWithCourseTags(courses);
         System.out.println("profFirstName from Search Service: " + profFirstName);
         System.out.println("profLastName from Search Service: " + profLastName);
         System.out.println("className from Search Service: " + className);
         System.out.println("tagLabel from Search Service: " + tagLabels);
-        return courseRepository.findCoursesByCriteria(profFirstName, profLastName, className, tagLabels);
+        return courses;
     }
 
+    public void setCoursesWithCourseTags(Set<Course> courses){
+        for (Course course : courses) {
+            course.setCourseTags(courseTagRepository.findByCourseID(course.getCourseID()));
+        }
+    }
 
 
     @Transactional

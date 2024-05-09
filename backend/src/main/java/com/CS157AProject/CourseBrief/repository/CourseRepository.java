@@ -1,6 +1,7 @@
 package com.CS157AProject.CourseBrief.repository;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -47,15 +48,31 @@ public interface CourseRepository extends JpaRepository<Course, String> {
         // tagLabel);
 
         @Query("SELECT c FROM Course c " +
-                        "JOIN c.courseTags ct " +
-                        "JOIN c.professor p " +
-                        "JOIN c.aClass cl " +
-                        "WHERE (:className IS NULL OR cl.className = :className) " +
-                        "AND (:firstName IS NULL OR p.firstName = :firstName) " +
-                        "AND (:lastName IS NULL OR p.lastName = :lastName) " +
-                        "AND (:tagLabels IS NULL OR ct.tag.label IN :tagLabels) " +
-                        "GROUP BY c.courseID " +
-                        "HAVING COUNT(DISTINCT ct.tag.label) >= (SELECT COUNT(t) FROM Tag t WHERE t.label IN :tagLabels)")
-        List<Course> findCoursesByCriteria(@Param("firstName") String firstName, @Param("lastName") String lastName,
-                        @Param("className") String className, @Param("tagLabels") List<String> tagLabels);
+        "JOIN c.courseTags ct " +
+        "JOIN c.professor p " +
+        "JOIN c.aClass cl " +
+        "WHERE (:className IS NULL OR cl.className = :className) " +
+        "AND (:firstName IS NULL OR p.firstName = :firstName) " +
+        "AND (:lastName IS NULL OR p.lastName = :lastName) " +
+        "AND (:tagLabels IS NULL OR ct.tag.label IN :tagLabels) " +
+        "GROUP BY c.courseID " +
+        "HAVING COUNT(DISTINCT ct.tag.label) >= (SELECT COUNT(t) FROM Tag t WHERE t.label IN :tagLabels)")
+        Set<Course> findCoursesByCriteria(@Param("firstName") String firstName,
+        @Param("lastName") String lastName,
+        @Param("className") String className, @Param("tagLabels") List<String>
+        tagLabels);
+
+        // @Query("SELECT c, t.label as tagLabel FROM Course c " +
+        //                 "JOIN c.courseTags ct " +
+        //                 "JOIN ct.tag t " + // Directly join with the Tag entity
+        //                 "JOIN c.professor p " +
+        //                 "JOIN c.aClass cl " +
+        //                 "WHERE (:className IS NULL OR cl.className = :className) " +
+        //                 "AND (:firstName IS NULL OR p.firstName = :firstName) " +
+        //                 "AND (:lastName IS NULL OR p.lastName = :lastName) " +
+        //                 "AND (:tagLabels IS NULL OR t.label IN :tagLabels) " +
+        //                 "GROUP BY c.courseID, t.label " + // Include tag.label in the GROUP BY clause
+        //                 "HAVING COUNT(DISTINCT t.label) >= (SELECT COUNT(t) FROM Tag t WHERE t.label IN :tagLabels)")
+        // List<Course> findCoursesByCriteria(@Param("firstName") String firstName, @Param("lastName") String lastName,
+        //                 @Param("className") String className, @Param("tagLabels") List<String> tagLabels);
 }

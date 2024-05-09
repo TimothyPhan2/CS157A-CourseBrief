@@ -30,6 +30,7 @@ const ResultsPage = () => {
                   <ResultCards
                     prof={courseData.professor.firstName}
                     course={courseData.aclass.className}
+                    tags= {courseData.courseTags.map(tag => tag.tag.label)}
                     courseId={courseData.courseID}
                   />
                 </Col>

@@ -8,6 +8,7 @@ import com.CS157AProject.CourseBrief.service.CourseService;
 import com.CS157AProject.CourseBrief.service.TagService;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +36,7 @@ public class SearchController {
     // }
 
     @GetMapping("/search")
-    public List<Course> searchCourses(@RequestParam(required = false) String profFirstName,
+    public Set<Course> searchCourses(@RequestParam(required = false) String profFirstName,
             @RequestParam(required = false) String profLastName, @RequestParam(required = false) String className,
             @RequestParam(required = false) List<String> tagLabel){
         System.out.println("profFirstName from Search Controller: " + profFirstName);
