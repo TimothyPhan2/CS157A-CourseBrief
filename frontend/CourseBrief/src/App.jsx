@@ -9,8 +9,43 @@ import SearchPage from "./components/SearchPage.jsx";
 import "./App.css"; 
 import NavBar from "./components/NavBar.jsx";
 import ResultsPage from "./components/ResultsPage.jsx";
+import CoursePage from "./components/CoursePage.jsx";
 
 const App = () => {
+  
+    return (
+      <AuthProvider>
+        <RoutesComponent />
+      </AuthProvider>
+    );
+  };
+  
+  const RoutesComponent = () => {
+    const { user } = useContext(AuthContext);
+  
+    return (
+      <>
+        <NavBar />
+        <Routes>
+          {user ? (
+            <>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="homepage" element={<HomePage />} />
+              <Route path="search" element={<SearchPage />} />
+              <Route path="setting" element={<SettingPage />} />
+              <Route path ="results" element = {<ResultsPage/>} />
+              <Route path = "course/:courseId" element = {<CoursePage/>} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route path="signup" element={<SignUpPage />} />
+            </>
+          )}
+        </Routes>
+      </>
+
   return (
     <>
     <NavBar />
@@ -24,6 +59,7 @@ const App = () => {
 
       </Routes>
     </>
+
 
     );
 };

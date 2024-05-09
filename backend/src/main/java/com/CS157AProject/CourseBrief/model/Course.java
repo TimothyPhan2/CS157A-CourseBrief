@@ -2,6 +2,9 @@ package com.CS157AProject.CourseBrief.model;
 
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.*;
 
 @Getter
@@ -22,4 +25,7 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "classID")
     private Class aClass;
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<CourseTag> courseTags = new HashSet<>();
 }
