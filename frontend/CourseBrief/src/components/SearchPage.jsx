@@ -8,10 +8,7 @@ import courseBrief from "../api/axios";
 const SearchPage = () => {
     const [tags, setTags] = useState([]);
     const navigate = useNavigate();
-    const handleLogout = () => {
-        logout(); 
-        navigate('/login');
-    };
+   
     const handleSubmit = (event) => {
         event.preventDefault();  // Prevent the default form submission
         const ProfessorName = event.target.ProfessorName.value;
@@ -78,7 +75,7 @@ const SearchPage = () => {
                                     </Col>
 
                                     <div className='d-flex justify-content-center mb-4'>
-                                        <Button type='submit' className='btn-primary shadow button-login' onClick={handleLogout}>
+                                        <Button type='submit' className='btn-primary shadow button-login'>
                                             Search
                                         </Button>
                                     </div>

@@ -1,6 +1,7 @@
 package com.CS157AProject.CourseBrief.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,5 +45,10 @@ public class UserController {
 
 
         
+    }
+    @DeleteMapping("/delete")
+    public String deleteUser(@RequestBody User user) {
+        userService.deleteUser(user.getUsername());
+        return "User deleted";
     }
 }

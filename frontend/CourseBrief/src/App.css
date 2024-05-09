@@ -234,7 +234,7 @@ Styles for results and result cards page
 .container-style-home {
   width: 80vw;
   max-width: 1200px;
-  margin-top: 1vw;
+  margin-top: 5vw;
   background: #f6f6f2;
   border-radius: 20px;
   box-shadow: 0px 0px 20px 0px #9acdd0;
@@ -245,8 +245,10 @@ Styles for results and result cards page
 }
 
 .card-grid {
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+  gap: 10px;
   width: 100%;
 }

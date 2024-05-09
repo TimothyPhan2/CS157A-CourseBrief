@@ -1,63 +1,54 @@
 import React, { useState } from 'react';
-import { Card, Button, Collapse } from 'react-bootstrap';
+import { Card, Button, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
 const HomePageCard = ({ profName, className, tagList, commentList }) => {
-    const [openTags, setOpenTags] = useState(false);
-    const [openComments, setOpenComments] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => setShowModal(true);
 
     return (
-        <Card className="card-style">
-            <Card.Body>
-                <Card.Title>{profName}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{className}</Card.Subtitle>
+        <>
+            <Card className="card-style mb-4 shadow-sm">
+                <Card.Body className="p-4">
+                    <Card.Title className="mb-2 font-weight-bold">{profName}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{className}</Card.Subtitle>
+                    <Card.Text>
+                        <strong>Tags:</strong> {tagList.slice(0, 5).join(', ')}
+                    </Card.Text>
+                    <Card.Text>
+                        <strong>Comments:</strong> {commentList[0]}
+                    </Card.Text>
+                    <Button variant="primary search-btn" onClick={handleShow}>
+                        View
+                    </Button>
+                </Card.Body>
+            </Card>
 
-                {/* Tags Section */}
-                <Card.Text>
-                    <strong>Tags:</strong> {tagList.slice(0, 5).join(', ')}
-                    {tagList.length > 5 && (
-                        <>
-                            <Button
-                                variant="link"
-                                onClick={() => setOpenTags(!openTags)}
-                                aria-controls="tags-collapse"
-                                aria-expanded={openTags}
-                            >
-                                {openTags ? 'Show Less' : 'View All'}
-                            </Button>
-                            <Collapse in={openTags}>
-                                <div id="tags-collapse">
-                                    {tagList.slice(5).join(', ')}
-                                </div>
-                            </Collapse>
-                        </>
-                    )}
-                </Card.Text>
+            <Modal show={showModal} onHide={handleClose} size="lg">
+                <Modal.Header closeButton>
+                    <Modal.Title>{profName} - {className}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <h5>Tags:</h5>
+                    <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
+                        {tagList.join(', ')}
+                    </div>
 
-                {/* Comments Section */}
-                <Card.Text>
-                    <strong>Comments:</strong> {commentList.slice(0, 3).join(', ')}
-                    {commentList.length > 3 && (
-                        <>
-                            <Button
-                                variant="link"
-                                onClick={() => setOpenComments(!openComments)}
-                                aria-controls="comments-collapse"
-                                aria-expanded={openComments}
-                            >
-                                {openComments ? 'Show Less' : 'View All'}
-                            </Button>
-                            <Collapse in={openComments}>
-                                <div id="comments-collapse">
-                                    {commentList.slice(3).join(', ')}
-                                </div>
-                            </Collapse>
-                        </>
-                    )}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+                    <h5 className="mt-4">Comments:</h5>
+                    <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
+                        {commentList.join(', ')}
+                    </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
     );
 };
 

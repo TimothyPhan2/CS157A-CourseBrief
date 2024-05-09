@@ -40,12 +40,17 @@ const HomePage = () => {
               Saved Courses
             </h1>
             <div className="card-grid">
-              <HomePageCard
+            <HomePageCard 
                 profName={mockData.ProfessorName}
                 className={mockData.CourseName}
                 tagList={mockData.Tags}
                 commentList={mockData.Comments}
-              />
+              /><HomePageCard 
+              profName={mockData.ProfessorName}
+              className={mockData.CourseName}
+              tagList={mockData.Tags}
+              commentList={mockData.Comments}
+            />
               <HomePageCard
                 profName={mockData.ProfessorName}
                 className={mockData.CourseName}

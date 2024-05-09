@@ -1,5 +1,7 @@
 package com.CS157AProject.CourseBrief.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -27,5 +29,7 @@ public interface CourseRepository extends JpaRepository <Course, String> {
     @Query(value = "SELECT MAX(CAST(SUBSTRING(c.courseID, :startPos) AS UNSIGNED)) FROM Course c", nativeQuery = true)
     Integer findHighestCourseId(@Param("startPos") int startPos);
 
-    
+    @Query(value = "SELECT ct.course FROM CourseTag ct JOIN ct.course.professor p JOIN ct.course.aClass cl WHERE p.firstName = :firstName AND p.lastName = :lastName AND cl.className = :className AND ct.tag.tagID IN :tags")
+    List<Course> findCoursesByCriteria(@Param("firstName") String firstName, @Param("lastName") String lastName,
+            @Param("className") String className, @Param("tags") List<String> tags);
 }

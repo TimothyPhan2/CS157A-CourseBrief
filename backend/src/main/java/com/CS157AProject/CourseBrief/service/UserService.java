@@ -48,10 +48,14 @@ public class UserService {
         return userRepository.findUserByUsername(userName);
     }
     
-    public void deleteUser(String userId){
-        userRepository.deleteById(userId);
+    public void deleteUser(String username) {
+        Optional<User> user = userRepository.findUserByUsername(username);
+        if (user.isPresent()) {
+            userRepository.delete(user.get());
+        } else {
+            throw new RuntimeException("User not found");
+        }
     }
-    
     public User authenticateUser(String username, String password){
         User user = userRepository.findUserByUsername(username).orElseThrow(() -> new RuntimeException("User not found"));
         if (bCryptPasswordEncoder.matches(password, user.getPassword())) {
