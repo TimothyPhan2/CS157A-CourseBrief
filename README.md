@@ -57,7 +57,7 @@ CourseBriefAdmin
     - Available commands: 'course', 'tag', and 'help' 
 
 
-Division of Proof
+## Division of Proof
 - Nick: Designed and developed CourseBrief database schema, tables, and normalization. Implemented CourseBrief models, repositories and service classes. Built CourseBrief's admin interface through Spring Shell.
 
 ## Authors
