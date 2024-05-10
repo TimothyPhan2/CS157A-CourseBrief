@@ -23,8 +23,20 @@ CourseBrief is a navigational web-app for searching and discovering CS and CMPE 
 
 ### Development
 - Ensure MySQL server is running
-- Create system environmental variable called 'DB_PASSWORD'
-- Set the variable to the MySQL server instance password
+- The project currently connects to the MYSQL server without a password
+- If you have a password for the root user:
+   - Create system environmental variable called 'DB_PASSWORD'
+   - Set the variable to the MySQL server instance password
+   - Navigate to \backend\src\main\resources\application.properties
+   - Comment out the line:
+     ```
+     spring.datasource.password=
+     ```
+   - Uncomment out the line:
+     ```
+     spring.datasource.password=${DB_PASSWORD}
+     ```
+     
 
 CourseBriefApplication
 - Run Frontend:
