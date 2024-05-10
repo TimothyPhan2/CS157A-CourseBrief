@@ -41,7 +41,7 @@ CourseBriefApplication
     source createdb.sql
     ```
   - Run the application to create the tables:
-    - Navigate to \backend\src\main\java\com\CS157AProject\CourseBriefAdmin\CourseBriefAdmin.java
+    - Navigate to \backend\src\main\java\com\CS157AProject\CourseBrief\CourseBriefApplication.java
     - In any IDE, use the built-in 'run' to run the CourseBriefApplication.java.
   - Execute 'insertStatements.sql' by running in MySQL shell
     ```
