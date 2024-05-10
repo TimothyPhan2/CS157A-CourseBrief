@@ -49,7 +49,7 @@ CourseBriefApplication
     ```
   - Visit http://localhost:5173/
 
-// *WARNING: Terminate CourseBriefApplication.java before running CourseBriefAdmin.java
+ *WARNING: Terminate CourseBriefApplication.java before running CourseBriefAdmin.java
 CourseBriefAdmin
   - Navigate to \backend\src\main\java\com\CS157AProject\CourseBriefAdmin\CourseBriefAdmin.java
   - In any IDE, use the built-in 'run' to run the CourseBriefAdmin.java.
