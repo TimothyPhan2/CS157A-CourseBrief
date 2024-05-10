@@ -105,7 +105,7 @@ const CoursePage = () => {
                       <Card.Text>{comment.textualContent}</Card.Text>
                       <footer className="blockquote-footer">
                         <small>
-                          {comment.user.userID} on {formatDate(comment.date)}
+                          Posted on {formatDate(comment.date)}
                         </small>
                       </footer>
                     </Card.Body>
