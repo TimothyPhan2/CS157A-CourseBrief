@@ -45,5 +45,6 @@ public class SearchController {
         System.out.println("tagLabel from Search Controller: " + tagLabel);
         return courseService.getCourseByCriteria(className, profFirstName, profLastName, tagLabel);
     }
+    
 
 }

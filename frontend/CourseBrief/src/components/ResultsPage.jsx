@@ -11,14 +11,11 @@ import { useLocation } from "react-router-dom";
 const ResultsPage = () => {
   let location = useLocation();
   let data = location.state ? location.state.data : null;
-  const courses = [
-    { prof: "Prof. Ramin", course: "CS 157A", tags: ["DBMS", "SQL"] },
-    { prof: "Prof. Ramin", course: "CS 157A", tags: ["DBMS", "SQL"] },
-  ];
+
   console.log("IN RESULTS PAGE", data);
   return (
     <section className="section-style">
-      <Container className="container-style p-5">
+      <Container className="container-style container-style-results p-5">
         <Row className="d-flex justify-content-center">
           <Col className="d-flex flex-column align-items-center">
             <h1 className="display-4 text-center fw-bold resultstitle">
@@ -28,7 +25,8 @@ const ResultsPage = () => {
               {data.map((courseData, index) => (
                 <Col key={index}>
                   <ResultCards
-                    prof={courseData.professor.firstName}
+                    prof={courseData.professor.firstName + " " + courseData.professor.lastName}
+                    
                     course={courseData.aclass.className}
                     tags= {courseData.courseTags.map(tag => tag.tag.label)}
                     courseId={courseData.courseID}

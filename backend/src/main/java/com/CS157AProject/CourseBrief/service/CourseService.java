@@ -45,6 +45,7 @@ public class CourseService {
         setCoursesWithCourseTags(courses);
         return courses;
     }
+    
 
     public void setCoursesWithCourseTags(Set<Course> courses){
         for (Course course : courses) {
