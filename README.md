@@ -43,7 +43,7 @@ CourseBriefApplication
   - Run the application to create the tables:
     - Navigate to \backend\src\main\java\com\CS157AProject\CourseBriefAdmin\CourseBriefAdmin.java
     - In any IDE, use the built-in 'run' to run the CourseBriefApplication.java.
-  - Execute the 'insertStatements.sql'
+  - Execute 'insertStatements.sql' by running in MySQL shell
     ```
     source insertStatements.sql
     ```
