@@ -210,7 +210,7 @@ Styles for results and result cards page
   align-items: center;     
   padding: 0.6em 0.9em;     
   margin-right: 10px;        
-  margin-bottom: 20px;          
+  margin-bottom: 10px;          
   background-color: #6FB3B8 !important; 
   color: rgb(255, 255, 255); 
   font-size: 1rem;            
@@ -243,7 +243,14 @@ Styles for results and result cards page
 .searchtitle {
   color: #343a40;
 }
-
+.container-style-results {
+  width: 100vw;
+  max-width: 1600px;
+  margin-top: 5vw;
+  background: #f6f6f2;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px #9acdd0;
+}
 .card-grid {
 
   display: grid;
@@ -251,4 +258,34 @@ Styles for results and result cards page
   justify-items: center;
   gap: 10px;
   width: 100%;
+}
+.card-style {
+  width:500px; 
+  height: 350px;
+  
+  padding: 20px;
+  overflow:visible;
+  border-radius: 15px;
+  background-color: #ffffff; /* Add a background color to the card */
+  transition: transform .2s; /* Animation to scale the card on hover */
+}
+
+.card-style:hover {
+  transform: scale(1.02); /* Scale the card up slightly when hovered */
+}
+
+.result-card-btn {
+  
+  margin: 10px;
+  background-color: #007bff; /* Change the button color */
+  color: #ffffff; /* Change the button text color */
+  border: none; /* Remove the button border */
+}
+
+.result-card-btn:hover {
+  background-color: #0056b3; /* Darken the button color when hovered */
+}
+.card-style .card-body {
+  display: flex;
+  flex-direction: column;
 }

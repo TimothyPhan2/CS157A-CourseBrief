@@ -4,8 +4,6 @@ package com.CS157AProject.CourseBrief.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

@@ -12,6 +12,7 @@ public class CommentService {
     private CommentRepository commentRepository;
 
     public Comment saveComment(Comment comment) {
+        System.out.println("CommentService: " + comment);
         return commentRepository.save(comment);
     }
 

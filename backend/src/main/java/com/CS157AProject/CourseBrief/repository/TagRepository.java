@@ -11,9 +11,11 @@ import com.CS157AProject.CourseBrief.model.Tag;
 @Repository
 public interface TagRepository extends JpaRepository<Tag, String>{
     
-    Tag findTagByTagID(String tagID);
+    @Query("SELECT t FROM Tag t WHERE t.tagID = :tagID")
+    Tag findTagByTagID(@Param("tagID")String tagID);
 
-    Tag findTagByLabel(String label);
+    @Query("SELECT t FROM Tag t WHERE t.label = :label")
+    Tag findTagByLabel(@Param("label")String label);
 
     @Query("SELECT t FROM Tag t WHERE t.label LIKE %:label%")
     List<Tag> findTagsByLabelContains(@Param("label") String label);
