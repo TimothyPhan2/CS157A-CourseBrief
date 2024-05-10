@@ -12,17 +12,37 @@ import {
 import { AuthContext } from "../userAuth/AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
+import axios1 from "../api/axios";
 import "../App.css";
 
 const SettingPage = () => {
     const { logout } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    
+    console.log(user.username);
     const navigate = useNavigate();
-        const handleLogout = () => {
-        logout();
-        localStorage.removeItem("user");
-        navigate("/login");
-        }
+    const handleLogout = () => {
+      logout();
+      localStorage.removeItem("user");
+      navigate("/login");
+    }
+    const handleDelete = (user) => {
+      axios1.delete('delete', { data: user })
+          .then(response => {
+              console.log(response.data);
+              alert("User deleted successfully");
+              logout();
+              localStorage.removeItem("user");
+              navigate('/login');
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              alert("Delete failed. Please try again.");
+          });
+  };
 
+
+          
   return (
     <section className="section-style">
       <Container className="container-style py-5">
@@ -46,7 +66,7 @@ const SettingPage = () => {
                       </Button>
                     </div>
                     <div className="d-flex justify-content-center mb-4">
-                      <Button className="btn-danger btn-lg shadow button-login" onClick={handleLogout}>
+                      <Button className="btn-danger btn-lg shadow button-login" onClick={() => handleDelete(user)}>
                         Delete Account
                       </Button>
                     </div>

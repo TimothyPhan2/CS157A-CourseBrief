@@ -34,4 +34,10 @@ public class Course {
     @JsonManagedReference
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<CourseTag> courseTags = new HashSet<>();
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Comment> comments = new HashSet<>();
+
+  
 }

@@ -43,12 +43,9 @@ public class CourseService {
         // List<Course> courses = courseRepository.findCoursesByCriteria(profFirstName, profLastName, className, tagLabels);
         Set<Course> courses = courseRepository.findCoursesByCriteria(profFirstName, profLastName, className, tagLabels);
         setCoursesWithCourseTags(courses);
-        System.out.println("profFirstName from Search Service: " + profFirstName);
-        System.out.println("profLastName from Search Service: " + profLastName);
-        System.out.println("className from Search Service: " + className);
-        System.out.println("tagLabel from Search Service: " + tagLabels);
         return courses;
     }
+    
 
     public void setCoursesWithCourseTags(Set<Course> courses){
         for (Course course : courses) {

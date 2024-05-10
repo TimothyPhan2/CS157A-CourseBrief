@@ -1,64 +1,63 @@
-import React, { useState } from 'react';
-import { Card, Button, Collapse } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
+import React, { useState } from "react";
+import { Card, Button, Modal } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
 
 const HomePageCard = ({ profName, className, tagList, commentList }) => {
-    const [openTags, setOpenTags] = useState(false);
-    const [openComments, setOpenComments] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-    return (
-        <Card className="card-style">
-            <Card.Body>
-                <Card.Title>{profName}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{className}</Card.Subtitle>
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
 
-                {/* Tags Section */}
-                <Card.Text>
-                    <strong>Tags:</strong> {tagList.slice(0, 5).join(', ')}
-                    {tagList.length > 5 && (
-                        <>
-                            <Button
-                                variant="link"
-                                onClick={() => setOpenTags(!openTags)}
-                                aria-controls="tags-collapse"
-                                aria-expanded={openTags}
-                            >
-                                {openTags ? 'Show Less' : 'View All'}
-                            </Button>
-                            <Collapse in={openTags}>
-                                <div id="tags-collapse">
-                                    {tagList.slice(5).join(', ')}
-                                </div>
-                            </Collapse>
-                        </>
-                    )}
-                </Card.Text>
+  return (
+    <>
+      <Card className="card-style mb-4 shadow-sm">
+        <Card.Body className="p-4 text-center">
+          <Card.Title className="mb-2 font-weight-bold">{profName}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">{className}</Card.Subtitle>
+          <Card.Text>
+            <strong>Tags:</strong> {tagList.slice(0, 5).join(", ")}
+          </Card.Text>
+          <Card.Text>
+            <strong>Comments:</strong> {commentList[0]}
+          </Card.Text>
+          <div>
+            <Button variant="primary search-btn text-center" onClick={handleShow}>
+                View
+            </Button>
+          </div>
+        </Card.Body>
+      </Card>
 
-                {/* Comments Section */}
-                <Card.Text>
-                    <strong>Comments:</strong> {commentList.slice(0, 3).join(', ')}
-                    {commentList.length > 3 && (
-                        <>
-                            <Button
-                                variant="link"
-                                onClick={() => setOpenComments(!openComments)}
-                                aria-controls="comments-collapse"
-                                aria-expanded={openComments}
-                            >
-                                {openComments ? 'Show Less' : 'View All'}
-                            </Button>
-                            <Collapse in={openComments}>
-                                <div id="comments-collapse">
-                                    {commentList.slice(3).join(', ')}
-                                </div>
-                            </Collapse>
-                        </>
-                    )}
-                </Card.Text>
-            </Card.Body>
-        </Card>
-    );
+      <Modal show={showModal} onHide={handleClose} size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {profName} - {className}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h5>Tags:</h5>
+          <ul style={{ maxHeight: "200px", overflowY: "auto" }}>
+            {tagList.map((tag, index) => (
+              <li key={index}>{tag}</li>
+            ))}
+          </ul>
+
+          <h5 className="mt-4">Comments:</h5>
+          <ul style={{ maxHeight: "200px", overflowY: "auto" }}>
+            {commentList.map((comment, index) => (
+              <li key={index}>{comment}</li>
+            ))}
+          </ul>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 };
 
 export default HomePageCard;

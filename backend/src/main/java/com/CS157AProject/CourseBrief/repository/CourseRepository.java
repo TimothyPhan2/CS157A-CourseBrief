@@ -62,6 +62,8 @@ public interface CourseRepository extends JpaRepository<Course, String> {
         @Param("className") String className, @Param("tagLabels") List<String>
         tagLabels);
 
+       
+
         // @Query("SELECT c, t.label as tagLabel FROM Course c " +
         //                 "JOIN c.courseTags ct " +
         //                 "JOIN ct.tag t " + // Directly join with the Tag entity
