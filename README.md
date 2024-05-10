@@ -8,7 +8,7 @@ Search Countless CS and CMPE Courses at SJSU
 - [Authors](#authors)
 
 ## About
-CourseBrief is a navigational web-app for searching and discovering CS and CMPE courses. 
+CourseBrief is a navigational web-app for searching and discovering CS and CMPE courses at SJSU. 
 
 **Tech Stack:**  
 - Frontend: React
@@ -16,7 +16,7 @@ CourseBrief is a navigational web-app for searching and discovering CS and CMPE 
 - Database: MySQL
 - Admin Interface: Spring Shell
 ## Requirements
-- Java 17
+- Java 17 
 - Node 
 - NPM
 - MySQL
@@ -49,12 +49,16 @@ CourseBriefApplication
     ```
   - Visit http://localhost:5173/
 
+// *WARNING: Terminate CourseBriefApplication.java before running CourseBriefAdmin.java
 CourseBriefAdmin
   - Navigate to \backend\src\main\java\com\CS157AProject\CourseBriefAdmin\CourseBriefAdmin.java
   - In any IDE, use the built-in 'run' to run the CourseBriefAdmin.java.
   - Go to the shell in the terminal:
     - Available commands: 'course', 'tag', and 'help' 
 
+
+Division of Proof
+- Nick: Designed and developed CourseBrief database schema, tables, and normalization. Implemented CourseBrief models, repositories and service classes. Built CourseBrief's admin interface through Spring Shell.
 
 ## Authors
 - [@nickfaylor](https://github.com/nickfaylor)
