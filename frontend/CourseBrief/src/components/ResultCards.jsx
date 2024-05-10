@@ -5,14 +5,15 @@ import "../App.css";
 import { redirect, useNavigate } from "react-router-dom";
 import { AuthContext } from "../userAuth/AuthContext";
 import axois1 from "../api/axios";
-const ResultCards = ({ prof, course, tags, courseId, navigate }) => {
+
+const ResultCards = ({ prof, course, tags, courseId }) => {
   const { user } = useContext(AuthContext);
   const [showModal, setShowModal] = useState(false);
   
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
+  const navigate = useNavigate();
   
-
   const starredCourse = {
     
     user: user,
@@ -60,7 +61,7 @@ const ResultCards = ({ prof, course, tags, courseId, navigate }) => {
           </div>
           <div className = "d-flex justify-content-end mt-auto">
             <div >
-              <Button className="result-card-btn" onClick={() => handleStar(user.username)}>Star</Button>
+              <Button className="result-card-btn" onClick={() => navigate(`/course/${courseId}`)}>Go to</Button>
             </div>
             <div>
               <Button className="result-card-btn" onClick={handleShow}>View</Button>

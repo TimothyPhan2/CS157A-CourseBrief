@@ -18,7 +18,14 @@ public class StarredCourseService {
     private StarredCourseRepository starredCourseRepository;
 
     public StarredCourse saveStarredCourses(StarredCourse starredCourse) {
-       
+
+        // starredCourse.setUser(user.get());
+        // starredCourse.setCourse(course);
+        starredCourse.getId().setCourseID(starredCourse.getUser().getUsername());
+        starredCourse.getId().setUserID(starredCourse.getUser().getUsername());
+        
+        
+        
         return starredCourseRepository.save(starredCourse);
     }
 

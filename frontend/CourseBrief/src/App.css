@@ -89,83 +89,83 @@
 
 /* General styles for the navigation bar */
 .custom-navbar {
-    background-color: #054444; /* Dark background for the navbar */
+    background-color: #054444; 
     height: 4vw;
 }
 
 /* Container styles within the navbar */
 .navbar-container {
-    padding: 0 10px; /* Add padding on the sides */
+    padding: 0 10px; 
 }
 
 /* Branding specific styles */
 .navbar-brand {
-    font-size: 1.5em; /* Larger font size for the brand name */
-    color: #34a8b0; /* White color text for visibility */
-    font-weight: bold; /* Bold font weight */
+    font-size: 1.5em; 
+    color: #34a8b0; 
+    font-weight: bold; 
 }
 
 /* Toggle button styles */
 .navbar-toggle {
-    border: none; /* Removes border from the toggle button */
-    color: #fff; /* White color for the icon */
+    border: none; 
+    color: #fff; 
 }
 
 /* Collapse section styling */
 .navbar-collapse {
-    justify-content: flex-end; /* Aligns the nav items to the right */
+    justify-content: flex-end; 
 }
 
 /* General nav item styling */
 .nav-item {
-    color: #bbb; /* Light grey color for nav links */
-    transition: color 0.3s ease; /* Smooth transition for hover effects */
+    color: #bbb; 
+    transition: color 0.3s ease; 
 }
 
 /* Specific styles for Home link */
 .nav-home {
     margin-right: 20px;;
-    font-weight: bold; /* Bold font for Home to make it stand out */
+    font-weight: bold; 
 }
 .nav-login{
-  color: #499fc4; /* White color on hover for Login */
+  color: #499fc4; 
   font-weight: bold; 
 }
 /* Login link styles */
 .nav-login:hover {
-    color: #16536f;; /* White color on hover for Login */
+    color: #16536f;; 
 }
 
 /* Signup link styles */
 .nav-signup {
-    color: #4CAF50; /* Green color for Signup to make it distinctive */
-    font-weight: bold; /* Bold font for emphasis */
+    color: #4CAF50; 
+    font-weight: bold; 
 }
 
 .nav-signup:hover {
-    color: #367C39; /* Darker green on hover */
+    color: #367C39; 
 }
 .tag-badge {
-  display: flex;            /* Ensures flexbox layout for internal elements */
-  align-items: center;      /* Centers items vertically */
-  padding: 0.4em 0.8em;     /* Adds padding around the text */
-  margin-right: 8px;        /* Right margin for spacing between tags */
-  margin-bottom: 8px;       /* Bottom margin for wrapping tags */
-  border: none;             /* Removes default border */
-  border-radius: 16px;      /* Rounded corners for a pill-like shape */
-  background-color: #a86565; /* Background color of the tag */
-  color: rgb(255, 255, 255);             /* Text color */
-  font-size: 0.85rem;       /* Slightly smaller font size */
-  cursor: default;          /* Default cursor on hover */
-  white-space: nowrap;      /* Prevents the text from wrapping */
+  display: flex;            
+  align-items: center;     
+  padding: 0.4em 0.8em;     
+  margin-right: 8px;       
+  margin-bottom: 8px;       
+  border: none;            
+  border-radius: 16px;      
+  background-color: #a86565;
+  color: rgb(255, 255, 255);             
+  font-size: 0.85rem;       
+  cursor: default;         
+  white-space: nowrap;      
 }
 
 /* Style for the close icon within the tag */
 .tag-badge .close-icon {
-  font-size: 1.2rem;        /* Larger icon size for better interaction */
-  color: white;             /* Icon color */
-  margin-left: 5px;         /* Space between text and icon */
-  cursor: pointer;          /* Pointer cursor on hover to indicate clickability */
+  font-size: 1.2rem;        
+  color: white;             
+  margin-left: 5px;         
+  cursor: pointer;          
 }
 
 /* Additional hover effect for the close icon */
@@ -266,24 +266,24 @@ Styles for results and result cards page
   padding: 20px;
   overflow:visible;
   border-radius: 15px;
-  background-color: #ffffff; /* Add a background color to the card */
-  transition: transform .2s; /* Animation to scale the card on hover */
+  background-color: #ffffff; 
+  transition: transform .2s; 
 }
 
 .card-style:hover {
-  transform: scale(1.02); /* Scale the card up slightly when hovered */
+  transform: scale(1.02); 
 }
 
 .result-card-btn {
   
   margin: 10px;
-  background-color: #007bff; /* Change the button color */
-  color: #ffffff; /* Change the button text color */
-  border: none; /* Remove the button border */
+  background-color: #007bff; 
+  color: #ffffff; 
+  border: none; 
 }
 
 .result-card-btn:hover {
-  background-color: #0056b3; /* Darken the button color when hovered */
+  background-color: #0056b3; 
 }
 .card-style .card-body {
   display: flex;

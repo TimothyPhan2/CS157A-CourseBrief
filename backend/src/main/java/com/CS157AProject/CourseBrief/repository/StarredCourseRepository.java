@@ -12,9 +12,9 @@ import com.CS157AProject.CourseBrief.model.EmbeddedIds.StarredCourseID;
 import jakarta.transaction.Transactional;
 
 import com.CS157AProject.CourseBrief.model.StarredCourse;
-
+import java.util.UUID;
 @Repository
-public interface StarredCourseRepository extends JpaRepository<StarredCourse, StarredCourseID>{
+public interface StarredCourseRepository extends JpaRepository<StarredCourse, UUID>{
 
     @Query("SELECT sc FROM StarredCourse sc WHERE sc.id.courseID = :courseID AND sc.id.userID = :userID")
     StarredCourse findStarredCourseByStarredID(@Param("courseID") String courseID, @Param("userID") String userID);
