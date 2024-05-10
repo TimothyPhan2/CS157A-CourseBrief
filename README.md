@@ -59,6 +59,7 @@ CourseBriefAdmin
 
 ## Division of Proof
 - Nick: Designed and developed CourseBrief database schema, tables, and normalization. Implemented CourseBrief models, repositories and service classes. Built CourseBrief's admin interface through Spring Shell.
+- Ibrahim: Created UI wireframes, mockups and then developed them into React componenets. Worked on connecting the backend and frontend and making api calls
 
 ## Authors
 - [@nickfaylor](https://github.com/nickfaylor)
