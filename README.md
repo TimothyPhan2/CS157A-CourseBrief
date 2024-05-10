@@ -16,19 +16,45 @@ CourseBrief is a navigational web-app for searching and discovering CS and CMPE 
 - Database: MySQL
 - Admin Interface: Spring Shell
 ## Requirements
-- Java
+- Java 17
 - Node 
 - NPM
 - MySQL
 
 ### Development
-```
+- Ensure MySQL server is running
+- Create system environmental variable called 'DB_PASSWORD'
+- Set the variable to the MySQL server instance password
 
+CourseBriefApplication
+- Run Frontend:
+  ```
+    // while in the project root directory
+    cd frontend\CourseBrief
+    npm install
+    npm run dev
+  ```
 
+- Run Backend:
+  - Execute 'createdb.sql' by running in MySQL shell
+    ```
+    source createdb.sql
+    ```
+  - Run the application to create the tables:
+    - Navigate to \backend\src\main\java\com\CS157AProject\CourseBriefAdmin\CourseBriefAdmin.java
+    - In any IDE, use the built-in 'run' to run the CourseBriefApplication.java.
+  - Execute the 'insertStatements.sql'
+    ```
+    source insertStatements.sql
+    ```
+  - Visit http://localhost:5173/
 
+CourseBriefAdmin
+  - Navigate to \backend\src\main\java\com\CS157AProject\CourseBriefAdmin\CourseBriefAdmin.java
+  - In any IDE, use the built-in 'run' to run the CourseBriefAdmin.java.
+  - Go to the shell in the terminal:
+    - Available commands: 'course', 'tag', and 'help' 
 
-
-```
 
 ## Authors
 - [@nickfaylor](https://github.com/nickfaylor)
