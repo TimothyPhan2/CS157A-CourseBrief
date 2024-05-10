@@ -63,6 +63,7 @@ CourseBriefAdmin
 
 ## Authors
 - [@nickfaylor](https://github.com/nickfaylor)
+- [@IbrahimD0](https://github.com/Ibrahimd0)
 - 
 - 
 - 
