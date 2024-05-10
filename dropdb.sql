@@ -1,0 +1,1 @@
+DROP DATABASE coursebrief_db;

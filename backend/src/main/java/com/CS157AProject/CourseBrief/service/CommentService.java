@@ -1,5 +1,7 @@
 package com.CS157AProject.CourseBrief.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,7 @@ public class CommentService {
     private CommentRepository commentRepository;
 
     public Comment saveComment(Comment comment) {
-        System.out.println("CommentService: " + comment);
+        // System.out.println("CommentService: " + comment);
         return commentRepository.save(comment);
     }
 
@@ -21,4 +23,5 @@ public class CommentService {
         return commentRepository.findCommentByCommentID(commentID);
     }
 
+   
 }
