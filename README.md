@@ -5,7 +5,6 @@ Search Countless CS and CMPE Courses at SJSU
 - [Requirements](#requirements)
   - [Production](#production)
   - [Development](#development)
-  - [Question Generation](#question-generation)
 - [Authors](#authors)
 
 ## About
