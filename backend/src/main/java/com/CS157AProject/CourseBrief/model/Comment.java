@@ -4,6 +4,10 @@ import lombok.*;
 import jakarta.persistence.*;
 import java.util.Date;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Getter
 @Setter
 @Data
@@ -13,6 +17,8 @@ import java.util.Date;
 @Table(name = "Comment")
 public class Comment {
     @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String commentID;
     @Column(name = "textualContent")
     private String textualContent;
@@ -21,7 +27,9 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "userID")
     private User user;
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "courseID")
     private Course course;
 }
